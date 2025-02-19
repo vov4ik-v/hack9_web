@@ -9,7 +9,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-// Імпорт вашого шрифту
 import { press_start } from "@/app/fonts";
 
 export default function Team() {
@@ -59,9 +58,7 @@ export default function Team() {
                 Наша команда
             </h2>
 
-            {/* Контейнер для слайдера */}
             <div className="relative w-full max-w-7xl mx-auto">
-                {/* Кнопки-навігація (стрілки) */}
                 <button
                     className="absolute left-0 top-1/2 -translate-y-1/2 z-10 -ml-12 p-2 bg-transparent"
                     id="prev-slide"
@@ -119,7 +116,6 @@ export default function Team() {
                   duration-500
                 "
                             >
-                                {/* Роль зверху */}
                                 <h4
                                     className={`
                     ${press_start.className}
@@ -134,7 +130,6 @@ export default function Team() {
                                     {member.role}
                                 </h4>
 
-                                {/* Ім’я (зелена плашка) трохи нижче */}
                                 <div
                                     className="
                     bg-[#7FFF4F]
@@ -152,7 +147,6 @@ export default function Team() {
                                     {member.name}
                                 </div>
 
-                                {/* Фото внизу (велике) */}
                                 <img
                                     src={member.img}
                                     alt={member.name}
@@ -173,7 +167,6 @@ export default function Team() {
                 </Swiper>
             </div>
 
-            {/* Додаткові стилі для затемнення неактивних слайдів */}
             <style>{`
     
         .swiper-slide:not(.swiper-slide-active) .item-container {

@@ -90,17 +90,13 @@ export default function Header() {
         <div ref={firstSectionRef} id="top" className="absolute top-0 w-full h-1" />
         <div ref={secondSectionRef} id="second" className="absolute top-[100vh] w-full h-1" />
 
-        {/* Обгортка для фіксованого хедера з прозорим фоном */}
         <motion.header
             initial={{ opacity: 0, y: -80 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            // Фіксуємо хедер зверху, робимо прозорим і задаємо великий індекс
             className="z-50 w-full fixed top-0"
         >
-          {/* Контейнер із відступами з боків і прозорим тлом */}
           <div className="container mx-auto px-4 md:px-8 py-[1.5vw] flex justify-between items-center bg-transparent transition-colors duration-300">
-            {/* Лого */}
             <div
                 onClick={() => {
                   handleScrollClick("#top");
@@ -116,7 +112,6 @@ export default function Header() {
               />
             </div>
 
-            {/* Навігація (десктоп) */}
             <div className="hidden xl:flex gap-8 xl:gap-20 leading-none">
               {navigation.map((item, index) => (
                   <span
@@ -129,7 +124,6 @@ export default function Header() {
               ))}
             </div>
 
-            {/* Меню (мобільна версія) */}
             <Dialog.Root
                 open={mobileMenuOpen}
                 onOpenChange={(open) => setMobileMenuOpen(open)}

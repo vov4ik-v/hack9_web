@@ -15,7 +15,6 @@ import "swiper/css/effect-coverflow";
 import { press_start } from "@/app/fonts";
 
 export default function Gallery() {
-    // Масив зображень
     const galleryImages = [
         "/Gallery1.png",
         "/Gallery2.png",
@@ -28,7 +27,6 @@ export default function Gallery() {
         "/Gallery4.png",
     ];
 
-    // Масив із “нестандартними” формами (класи Tailwind для різних заокруглень)
     const shapes = [
         "rounded-tl-[80px] rounded-tr-[20px] rounded-bl-[20px] rounded-br-[80px]",
         "rounded-t-[60px]",

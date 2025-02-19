@@ -34,7 +34,6 @@ export default function Contacts() {
                 Контакти
             </h1>
 
-            {/* Контактна інформація */}
             <div className="text-white text-left text-lg md:text-2xl font-mono">
                 <p className="mb-10">
                     <span  className={`

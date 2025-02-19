@@ -6,7 +6,6 @@ import { Smile, TrendingUp, Lightbulb } from "lucide-react";
 
 
 export default function Registration() {
-    // Функція для переходу за посиланням
     const redirectToSite = () => {
         window.open("https://t.me/HACKath0n_2025_bot", "_blank");
     };
@@ -14,7 +13,6 @@ export default function Registration() {
     return (
         <section
             id="registration"
-            // Градієнтний фон (чорний->зелений). Можна налаштувати під себе
             className="
         relative
         min-h-screen

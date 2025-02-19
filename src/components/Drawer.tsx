@@ -44,7 +44,6 @@ export default function Drawer({
         <AnimatePresence>
           {mobileMenuOpen && (
               <>
-                {/* Backdrop */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -54,7 +53,6 @@ export default function Drawer({
                     onClick={() => setMobileMenuOpen(false)}
                 />
 
-                {/* Drawer Content */}
                 <motion.div
                     initial={{ x: "100%" }}
                     animate={{ x: "0%" }}
@@ -75,7 +73,6 @@ export default function Drawer({
                       </button>
                     </div>
 
-                    {/* Navigation Links */}
                     <div className="mt-6 flow-root">
                       <div className="-my-6 divide-y divide-gray-500/10">
                         <div className="space-y-4 py-6 flex flex-col items-center">

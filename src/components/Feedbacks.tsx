@@ -128,7 +128,6 @@ export default function Feedbacks() {
                 shadow-lg
               "
                         >
-                            {/* Назва команди */}
                             <h3
                                 className={`
                   ${press_start.className}
@@ -140,7 +139,6 @@ export default function Feedbacks() {
                                 Команда {item.teamName}
                             </h3>
 
-                            {/* Цитата */}
                             <p className="leading-relaxed text-sm md:text-base italic text-center">
                                 “{item.quote}”
                             </p>

@@ -33,14 +33,12 @@ export default function Hero() {
     });
 
     useEffect(() => {
-        // Задайте дату і час, до якої відраховуємо
         const targetDate = new Date("2025-04-26T00:00:00").getTime();
 
         const timer = setInterval(() => {
             const now = new Date().getTime();
             const distance = targetDate - now;
 
-            // Якщо дата вже минула, обнуляємо і вимикаємо таймер
             if (distance <= 0) {
                 clearInterval(timer);
                 setTimeLeft({

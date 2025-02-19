@@ -5,10 +5,8 @@ import Image from "next/image";
 export default function Footer() {
   return (
       <footer className="w-full bg-black text-white py-4">
-        {/* Обгортка з максимальним розміром і автоматичними відступами */}
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
 
-          {/* Ліва частина: іконки соцмереж */}
           <div className="flex gap-4">
             <a
                 href="https://www.facebook.com/BEST.Lviv/"
@@ -60,7 +58,6 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* Середина: лого BEST */}
           <div className="flex-shrink-0">
             <Image
                 src="/BestLogo.svg"
@@ -71,7 +68,6 @@ export default function Footer() {
             />
           </div>
 
-          {/* Права частина: рік */}
           <div>
           <span className="text-sm sm:text-lg md:text-xl font-bold">
             2025
