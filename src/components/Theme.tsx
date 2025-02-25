@@ -1,5 +1,4 @@
 "use client";
-import {FaCalendarAlt, FaMapMarkerAlt} from "react-icons/fa";
 import {press_start} from "@/app/fonts";
 
 export default function Theme() {
@@ -16,9 +15,6 @@ export default function Theme() {
         justify-center
         px-6
         py-10
-        bg-gradient-to-br
-        from-black
-        to-[#0f3f0f]
         text-white
       "
         >
@@ -26,7 +22,7 @@ export default function Theme() {
                 className={`
           ${press_start.className}
           text-white
-          text-2xl
+          text-3xl
           md:text-4xl
           mb-6
           text-center
@@ -34,7 +30,6 @@ export default function Theme() {
             >
                 Тема
             </h2>
-
 
             <div
                 className="
@@ -57,17 +52,16 @@ export default function Theme() {
       text-black
     "
                 >
-    <span className={`
-          ${press_start.className} bg-[#5AFF36] px-4 py-2 rounded-2xl`}>
-      Післявоєнне відновлення
-    </span>
+                    <span className={`
+          ${press_start.className} bg-[#5AFF36] text-center px-4 py-2 rounded-2xl`}>
+                        Післявоєнне відновлення
+                    </span>
                 </h3>
                 <p className="text-base md:text-sm leading-relaxed text-black">
                     Тема цьогорічного BEST::HACKath0n зосереджена на розробці інноваційних рішень,
                     які сприятимуть ефективному та сталому відновленню України, роблячи її сильною,
                     стійкою та здатною протистояти будь-яким викликам.
                 </p>
-
                 <p className="text-base md:text-sm leading-relaxed text-black mt-4">
                     Сьогодні наша країна стикається з нагальною потребою у відновленні ключових сфер:
                     інфраструктури, економіки, екології та соціальної сфери. Відбувається пошкодження міст,
@@ -76,47 +70,44 @@ export default function Theme() {
                 </p>
             </div>
 
-
-
             <div className="flex flex-col items-center pt-20">
-            <div className="flex flex-wrap gap-36 justify-center items-center">
-                <div className="flex flex-col items-center">
-                    <FaCalendarAlt className="text-white text-8xl mb-10"/>
-                    <span
-                        className={`
+                <div className="flex flex-wrap gap-12 sm:gap-36 justify-center items-center">
+                    <div className="flex flex-col items-center">
+                        <img src="/theme/calendar-line.svg" alt="Calendar" className="w-20 h-20 sm:w-24 sm:h-24 mb-10"/>
+                        <span
+                            className={`
           ${press_start.className}
           text-[#5AFF36]
-          text-xl
-          md:text-2xl
+          text-sm
+          sm:text-lg
+          md:text-xl
           text-center
         `}
-                    >
-        26-27
-        <br/>
-        квітня
-      </span>
-                </div>
-                <div className="flex flex-col items-center">
-                    <FaMapMarkerAlt className="text-white text-8xl mb-10"/>
-                    <span
-                        className={`
+                        >
+                            26-27
+                            <br/>
+                            квітня
+                        </span>
+                    </div>
+                    <div className="flex flex-col items-center">
+                        <img src="/theme/map-pin-line.svg" alt="Location" className="w-20 h-20 sm:w-24 sm:h-24 mb-10"/>
+                        <span
+                            className={`
           ${press_start.className}
           text-[#5AFF36]
-          text-xl
-          md:text-2xl
+          text-sm
+          sm:text-lg
+          md:text-xl
           text-center
         `}
-                    >
-        Львів
-        <br/>
-        (offline)
-      </span>
+                        >
+                            Львів
+                            <br/>
+                            (offline)
+                        </span>
+                    </div>
                 </div>
             </div>
-        </div>
-
-
-</section>
-)
-    ;
+        </section>
+    );
 }

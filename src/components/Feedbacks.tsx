@@ -45,9 +45,6 @@ export default function Feedbacks() {
         relative
         min-h-[50vh]
         w-full
-        bg-gradient-to-r
-        from-black
-        to-[#0d4f0d]
         px-4
         py-10
       "
@@ -62,7 +59,7 @@ export default function Feedbacks() {
           mb-10
         `}
             >
-                Відгуки учасників
+                Відгуки
             </h2>
 
             <Swiper
@@ -85,6 +82,7 @@ export default function Feedbacks() {
                     rotate: 30,
                     stretch: 0,
                     depth: 100,
+                    scale: 0.5,
                     modifier: 1,
                     slideShadows: false,
                 }}
@@ -98,11 +96,11 @@ export default function Feedbacks() {
                     },
                     1200: {
                         slidesPerView: 3,
-                        spaceBetween: -10,
+                        spaceBetween: 20,
                     },
                     1600: {
                         slidesPerView: 3,
-                        spaceBetween: -10,
+                        spaceBetween: 20,
                     },
                 }}
             >
@@ -110,42 +108,45 @@ export default function Feedbacks() {
                     <SwiperSlide key={idx}>
                         <div
                             className="
-                border
-                border-black
-                bg-white
-                rounded-[40px]
-                p-8
-                mx-4
-                flex
-                flex-col
-                gap-4
-                items-center
-                text-black
-                max-w-sm
-                md:max-w-md
-                h-[300px]
-                md:h-[320px]
-                shadow-lg
-              "
+      border
+      border-black
+      bg-white
+      rounded-[50px]
+      p-8
+      px-12
+      flex
+      flex-col
+      gap-4
+      text-black
+      max-w-full
+      h-[300px]
+      md:h-[320px]
+      shadow-lg
+    "
                         >
                             <h3
                                 className={`
                   ${press_start.className}
-                  text-xl
-                  md:text-2xl
+                  text-sm
+                  md:text-lg
                   font-bold
+                  text-[#408989]
                 `}
                             >
                                 Команда {item.teamName}
                             </h3>
 
-                            <p className="leading-relaxed text-sm md:text-base italic text-center">
+                            <p className="leading-relaxed text-sm md:text-base italic text-start">
                                 “{item.quote}”
                             </p>
 
-                            {/* Автор */}
                             <div className="mt-auto flex items-center gap-2">
-                                <User size={24} />
+                                {/* Замість img можете вставити SVG-іконку */}
+                                <img
+                                    src="/feedbacks/icon.svg"
+                                    alt="author icon"
+                                    className="w-12 h-12"
+                                />
                                 <span className="font-semibold text-sm md:text-base">
                                     {item.author}
                                 </span>

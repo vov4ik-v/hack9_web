@@ -1,27 +1,7 @@
 "use client";
 
-import {press_start} from "@/app/fonts";
-import {useEffect, useState} from "react";
-
-type MenuItem = {
-    name: string;
-    href: string;
-};
-
-const navigation: MenuItem[] = [
-    {
-        name: "Про нас",
-        href: "#about",
-    },
-    {
-        name: "Пропозиції",
-        href: "#offers",
-    },
-    {
-        name: "Контакти",
-        href: "#contacts",
-    },
-];
+import { press_start } from "@/app/fonts";
+import { useEffect, useState } from "react";
 
 export default function Hero() {
     const [timeLeft, setTimeLeft] = useState({
@@ -59,79 +39,86 @@ export default function Hero() {
             const minutes = Math.floor((distance / (1000 * 60)) % 60);
             const seconds = Math.floor((distance / 1000) % 60);
 
-            setTimeLeft({months, days, hours, minutes, seconds});
+            setTimeLeft({ months, days, hours, minutes, seconds });
         }, 1000);
 
         return () => clearInterval(timer);
     }, []);
 
     return (
-        <section
-            className="
-        relative min-h-screen w-full
-        bg-gradient-to-r from-black to-[#1d5d1f]
-        flex flex-col
-        overflow-hidden
-      "
-        >
-
-            <div className="relative z-10 flex flex-col  items-center justify-center flex-1 px-4">
+        <section className="relative min-h-screen w-full flex flex-col overflow-hidden">
+            <div className="relative z-10 flex flex-col items-center justify-center flex-1 px-4">
                 <h1
                     className={`
             ${press_start.className}
-            text-white text-4xl md:text-6xl mb-10 text-center
+            text-white text-2xl sm:text-4xl md:text-5xl
+            mb-6 sm:mb-10 text-center
           `}
                 >
                     BEST::HACKath0n
                 </h1>
 
-                <div className="flex gap-16 text-white text-lg md:text-2xl mb-10">
+                <div className="flex gap-6 md:gap-12 lg:gap-16 text-white text-lg md:text-2xl mb-10">
                     <div className="flex flex-col items-center">
-            <span className={`${press_start.className} text-[#90FF77] text-3xl md:text-4xl font-bold pb-2.5`}>
+            <span className={`${press_start.className} text-[#5AFF36] text-xl sm:text-3xl md:text-4xl font-bold pb-2.5`}>
               {String(timeLeft.months).padStart(2, "0")}
             </span>
                         <span className="text-sm md:text-base ">mths</span>
                     </div>
                     <div className="flex flex-col items-center">
-            <span className={`${press_start.className} text-[#90FF77] text-3xl md:text-4xl font-bold pb-2.5`}>
+            <span className={`${press_start.className} text-[#5AFF36] text-xl sm:text-3xl md:text-4xl font-bold pb-2.5`}>
               {String(timeLeft.days).padStart(2, "0")}
             </span>
                         <span className="text-sm md:text-base ">days</span>
                     </div>
                     <div className="flex flex-col items-center">
-            <span className={`${press_start.className} text-[#90FF77] text-3xl md:text-4xl font-bold pb-2.5`}>
+            <span className={`${press_start.className} text-[#5AFF36] text-xl sm:text-3xl md:text-4xl font-bold pb-2.5`}>
               {String(timeLeft.hours).padStart(2, "0")}
             </span>
                         <span className="text-sm md:text-base ">hrs</span>
                     </div>
                     <div className="flex flex-col items-center">
-            <span className={`${press_start.className} text-[#90FF77] text-3xl md:text-4xl font-bold pb-2.5`}>
+            <span className={`${press_start.className} text-[#5AFF36] text-xl sm:text-3xl md:text-4xl font-bold pb-2.5`}>
               {String(timeLeft.minutes).padStart(2, "0")}
             </span>
                         <span className="text-sm md:text-base ">mins</span>
                     </div>
                     <div className="flex flex-col items-center">
-            <span className={`${press_start.className} text-[#90FF77] text-3xl md:text-4xl font-bold pb-2.5`}>
+            <span className={`${press_start.className} text-[#5AFF36] text-xl sm:text-3xl md:text-4xl font-bold pb-2.5`}>
               {String(timeLeft.seconds).padStart(2, "0")}
             </span>
                         <span className="text-sm md:text-base ">secs</span>
                     </div>
                 </div>
 
-                <button
-                    onClick={() => window.open("https://t.me/HACKath0n_2025_bot", "_blank")}
-                    className={`
-            ${press_start.className}
-            text-black bg-[#5AFF36]
-            px-8 py-4
-            mt-16
-            rounded-3xl
-            hover:scale-105
-            transition-transform
-          `}
-                >
-                    Зареєструватися
-                </button>
+                <div className="flex flex-col md:flex-row gap-4 md:gap-16 mt-6 sm:mt-16">
+                    <button
+                        onClick={() =>
+                            window.open("https://t.me/HACKath0n_2025_bot", "_blank")
+                        }
+                        className={`
+              ${press_start.className}
+              text-black bg-[#5AFF36]
+              px-6 sm:px-8 py-3 sm:py-4
+              rounded-3xl
+              hover:scale-105 transition-transform
+            `}
+                    >
+                        Зареєструватися
+                    </button>
+                    <button
+                        onClick={() => window.open("#partnership", "_blank")}
+                        className={`
+              ${press_start.className}
+              text-black bg-[#5AFF36]
+              px-6 sm:px-8 py-3 sm:py-4
+              rounded-3xl
+              hover:scale-105 transition-transform
+            `}
+                    >
+                        Стати партнером
+                    </button>
+                </div>
             </div>
         </section>
     );

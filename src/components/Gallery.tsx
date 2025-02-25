@@ -45,7 +45,6 @@ export default function Gallery() {
             className="
         min-h-screen
         w-full
-        bg-gradient-to-r from-black to-[#0f3f0f]
         py-20
         relative
       "

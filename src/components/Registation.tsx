@@ -1,9 +1,7 @@
 "use client";
-import { press_start } from "@/app/fonts";
+import {press_start} from "@/app/fonts";
 import Image from "next/image";
 import React from "react";
-import { Smile, TrendingUp, Lightbulb } from "lucide-react";
-
 
 export default function Registration() {
     const redirectToSite = () => {
@@ -17,23 +15,19 @@ export default function Registration() {
         relative
         min-h-screen
         w-full
-        bg-gradient-to-br
-        from-black
-        to-[#003f00]
         flex
         flex-col
         items-center
         justify-start
-        pt-16
-        pb-20
-        px-4
+        px-6
+        py-10
       "
         >
             <h2
                 className={`
           ${press_start.className}
           text-white
-          text-2xl
+          text-3xl
           md:text-4xl
           mb-10
           text-center
@@ -60,7 +54,8 @@ export default function Registration() {
           text-black
           rounded-full
           px-8
-          py-6
+          py-2
+          sm:py-6
           flex
           flex-col
           items-center
@@ -71,17 +66,15 @@ export default function Registration() {
                 >
                     <div
                         className="
-            bg-black
             rounded-full
             w-20
-            h-10
+            h-20
             flex
             items-center
             justify-center
-            mb-4
           "
                     >
-                        <Smile size={24} color="#5AFF36"/>
+                        <Image src="/registration/smile.svg" width={53} height={53} alt="Smile"/>
                     </div>
                     <p className="text-lg font-medium">Хочеш отримати унікальний досвід?</p>
                 </div>
@@ -92,7 +85,9 @@ export default function Registration() {
           text-black
           rounded-full
           px-8
-          py-6
+          py-2
+                    sm:py-6
+
           flex
           flex-col
           items-center
@@ -103,17 +98,16 @@ export default function Registration() {
                 >
                     <div
                         className="
-            bg-black
+
             rounded-full
             w-20
-            h-10
+            h-20
             flex
             items-center
             justify-center
-            mb-4
           "
                     >
-                        <TrendingUp size={24} color="#5AFF36"/>
+                        <Image src="/registration/trending.svg" width={53} height={53} alt="Trending"/>
                     </div>
                     <p className="text-lg font-medium">Випробувати свої сили на практиці?</p>
                 </div>
@@ -124,7 +118,9 @@ export default function Registration() {
           text-black
           rounded-full
           px-8
-          py-6
+          py-2
+                    sm:py-6
+
           flex
           flex-col
           items-center
@@ -135,17 +131,15 @@ export default function Registration() {
                 >
                     <div
                         className="
-            bg-black
             rounded-full
             w-20
-            h-10
+            h-20
             flex
             items-center
             justify-center
-            mb-4
           "
                     >
-                        <Lightbulb size={24} color="#5AFF36"/>
+                        <Image src="/registration/lightbulb.svg" width={37} height={53} alt="Lightbulb"/>
                     </div>
                     <p className="text-lg font-medium">
                         Реалізувати власну ідею за заданою темою?
@@ -167,10 +161,8 @@ export default function Registration() {
         justify-center
         text-center
         px-6
-        py-12
-        md:py-20
-
-
+        py-6
+        md:py-10
       "
             >
 
@@ -178,8 +170,9 @@ export default function Registration() {
                 <h3
                     className={`
           ${press_start.className}
-          text-[#7FFF4F]
-          text-xl
+          text-[#5AFF36]
+          text-2xl
+          sm:text-3xl
           md:text-3xl
           mb-6
         `}
@@ -204,15 +197,17 @@ export default function Registration() {
                 className={`
           ${press_start.className}
           text-white
-          text-2xl
+          text-xl
           md:text-3xl
           text-center
           font-semibold
           mb-6
+          mt-12
+          leading-relaxed
         `}
             >
                 Готовий(-a) go виклику?<br/>
-                Не зволікай!
+                <span className="mt-8 block">Не зволікай!</span>
             </h4>
 
 

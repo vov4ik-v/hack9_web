@@ -82,7 +82,6 @@ export default function Support() {
         relative
         min-h-screen
         w-full
-        bg-black
         flex
         flex-col
         px-6
