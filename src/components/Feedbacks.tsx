@@ -109,8 +109,7 @@ export default function Feedbacks() {
                     <SwiperSlide key={idx}>
                         <div
                             className="
-      border
-      border-black
+
       bg-white
       rounded-[50px]
       p-8
