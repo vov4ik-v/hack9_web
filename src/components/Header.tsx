@@ -112,7 +112,7 @@ export default function Header() {
               />
             </div>
 
-            <div className="hidden xl:flex gap-8 xl:gap-20 leading-none">
+            <div className="hidden lg:flex gap-8 xl:gap-20 leading-none">
               {navigation.map((item, index) => (
                   <span
                       key={index}
@@ -128,7 +128,7 @@ export default function Header() {
                 open={mobileMenuOpen}
                 onOpenChange={(open) => setMobileMenuOpen(open)}
             >
-              <div className="flex xl:hidden relative">
+              <div className="flex lg:hidden relative">
                 <Dialog.Trigger asChild>
                   <button
                       type="button"

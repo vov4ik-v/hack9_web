@@ -27,16 +27,29 @@ export default function Team() {
     ];
 
     return (
-        <section id="team" className="relative min-h-screen w-full py-10 px-4 flex flex-col items-center justify-start">
-            <h2 className={`${press_start.className} text-white text-3xl md:text-5xl mb-8 text-center`}>
+        <section
+            id="team"
+            className="relative min-h-screen w-full py-10 px-4 flex flex-col items-center justify-start"
+        >
+            <h2
+                className={`${press_start.className} text-white text-3xl md:text-5xl mb-8 text-center`}
+            >
                 Наша команда
             </h2>
 
-            <div className="relative w-full max-w-7xl mx-auto">
-                <button className="absolute left-0 top-1/2 -translate-y-1/2 z-10 -ml-12 p-2 bg-transparent" id="prev-slide">
+            <div className="relative w-full px-12 mx-auto flex flex-col">
+                <button
+                    className="absolute left-0 top-1/2 -translate-y-1/2 z-10
+                                p-2 bg-transparent"
+                    id="prev-slide"
+                >
                     <ChevronLeft size={50} className="text-white cursor-pointer"/>
                 </button>
-                <button className="absolute right-0 top-1/2 -translate-y-1/2 z-10 -mr-12 p-2 bg-transparent" id="next-slide">
+                <button
+                    className="absolute right-0 top-1/2 -translate-y-1/2 z-10
+                                p-2 bg-transparent"
+                    id="next-slide"
+                >
                     <ChevronRight size={50} className="text-white cursor-pointer"/>
                 </button>
 
@@ -47,33 +60,76 @@ export default function Team() {
                         nextEl: "#next-slide",
                         prevEl: "#prev-slide",
                     }}
-                    pagination={{clickable: true}}
-                    centeredSlides={true}
-                    slidesPerView={4}
-                    loop={true}
-                    loopAdditionalSlides={4}
-                    coverflowEffect={{
-                        rotate: 0,
-                        stretch: -70,
-                        depth: 150,
-                        modifier: 1,
-                        slideShadows: false,
+                    pagination={{
+                        clickable: true,
+                        el: ".team-pagination"
                     }}
-                    className="max-w-full w-full custom-coverflow"
+                    centeredSlides={true}
+                    centeredSlidesBounds={true}
+                    breakpoints={{
+                        0: {
+                            slidesPerView: 1,
+                            loop: false,
+                            centerInsufficientSlides: true,
+                            coverflowEffect: {
+                                rotate: 0,
+                                stretch: 0,
+                                depth: 150,
+                                modifier: 1,
+                                slideShadows: false,
+                            },
+                        },
+                        768: {
+                            slidesPerView: 3,
+                            loop: true,
+                            loopAdditionalSlides: 2,
+                            coverflowEffect: {
+                                rotate: 0,
+                                stretch: -70,
+                                depth: 150,
+                                modifier: 1,
+                                slideShadows: false,
+                            },
+                        },
+                        1280: {
+                            slidesPerView: 5,
+                            loop: true,
+                            loopAdditionalSlides: 4,
+                            coverflowEffect: {
+                                rotate: 0,
+                                stretch: -70,
+                                depth: 150,
+                                modifier: 1,
+                                slideShadows: false,
+                            },
+                        },
+                    }}
+                    className="max-w-full w-full custom-coverflow mb-8"
                 >
                     {teamMembers.map((member, idx) => (
                         <SwiperSlide key={idx} className="flex justify-center">
-                            <div className="item-container bg-white rounded-[32px] w-[250px] h-[500px] md:w-[350px] md:h-[650px] flex flex-col items-center relative shadow-lg overflow-hidden transition-transform duration-500">
+                            <div
+                                className="item-container bg-white rounded-[84px]
+                                           w-[260px] h-[610px]
+                                           md:w-[350px] md:h-[650px]
+                                           flex flex-col items-center relative
+                                           shadow-lg overflow-hidden transition-transform duration-500"
+                            >
                                 <div className="w-full p-6 flex flex-col items-center z-10">
-                                    <h4 className={`${press_start.className} text-black text-lg md:text-xl font-bold mb-4 text-center`}>
+                                    <h4
+                                        className={`${press_start.className}
+                                                    text-black text-lg md:text-xl
+                                                    font-bold mb-4 text-center`}
+                                    >
                                         {member.role}
                                     </h4>
-                                    <div className="bg-[#7FFF4F] text-black font-bold px-6 py-2 rounded-full text-base md:text-lg text-center">
+                                    <div
+                                        className="bg-[#7FFF4F] text-black font-bold px-6 py-2 rounded-full text-base md:text-lg text-center">
                                         {member.name}
                                     </div>
                                 </div>
 
-                                <div className="absolute bottom-0 w-full h-3/4 rounded-t-full overflow-hidden">
+                                <div className="absolute bottom-0 w-full h-3/4 rounded-t-[120px] overflow-hidden">
                                     <img
                                         src={member.img}
                                         alt={member.name}
@@ -84,11 +140,47 @@ export default function Team() {
                         </SwiperSlide>
                     ))}
                 </Swiper>
+
+                <div className="team-pagination w-full flex justify-center mt-4"></div>
             </div>
 
             <style>{`
-                .swiper-slide:not(.swiper-slide-active) .item-container {
-                    filter: brightness(0.5);
+                @media (min-width: 768px) {
+                    .swiper-slide:not(.swiper-slide-active) .item-container {
+                        filter: brightness(0.5);
+                    }
+                }
+                @media (max-width: 767px) {
+                    .swiper {
+                        display: flex;
+                        justify-content: center;
+                    }
+                    .swiper-slide {
+                        display: flex;
+                        justify-content: center;
+                    }
+                    
+                    .swiper-wrapper {
+                        justify-content: center;
+                    }
+                }
+                
+                .swiper-pagination-bullet {
+                    background-color: white !important;
+                    opacity: 0.5;
+                    width: 10px;
+                    height: 10px;
+                    margin: 0 5px;
+                }
+                
+                .swiper-pagination-bullet-active {
+                    background-color: white !important;
+                    opacity: 1;
+                }
+                
+                .team-pagination {
+                    position: static !important;
+                    margin-top: 20px;
                 }
             `}</style>
         </section>

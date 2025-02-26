@@ -88,11 +88,12 @@ export default function Feedbacks() {
                 }}
                 breakpoints={{
                     640: {
-                        slidesPerView: 1,
+                        slidesPerView: 2,
+                        spaceBetween: 20,
                     },
                     900: {
                         slidesPerView: 2,
-                        spaceBetween: -10,
+                        spaceBetween: 20,
                     },
                     1200: {
                         slidesPerView: 3,
@@ -141,7 +142,6 @@ export default function Feedbacks() {
                             </p>
 
                             <div className="mt-auto flex items-center gap-2">
-                                {/* Замість img можете вставити SVG-іконку */}
                                 <img
                                     src="/feedbacks/icon.svg"
                                     alt="author icon"

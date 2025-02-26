@@ -91,7 +91,7 @@ const Partner = ({imgSrc, alt}: { imgSrc: string; alt: string }) => {
                 alt={alt}
                 height={128}
                 width={208}
-                className="hover:scale-105 transition-all duration-500 h-16 sm:h-20"
+                className="hover:scale-105 transition-all duration-500 h-16 sm:h-20 md:h-24 lg:h-32"
             />
         </div>
     );
@@ -100,31 +100,22 @@ const Partner = ({imgSrc, alt}: { imgSrc: string; alt: string }) => {
 export default function Partners() {
     return (
         <section
-            className="
-        relative
-        min-h-screen
-        py-16
-        flex flex-col items-center
-        justify-center
-        w-full px-6 mx-auto gap-12
-        overflow-hidden
-      "
+            className="min-h-screen py-16  flex flex-col items-center justify-center max-w-7xl w-full px-4 sm:px-16 mx-auto gap-12"
         >
             <div className="relative w-full flex justify-center">
                 <h1
-                    className={`${press_start.className} text-white text-center text-3xl lg:text-4xl my-10`}
+                    className={`${press_start.className} flex self-center text-white text-center text-2xl lg:text-4xl my-10`}
                 >
                     Партнери
                 </h1>
+
             </div>
 
-            <div
-                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 justify-items-center">
+            <div className="grid grid-cols-4 lg:grid-cols-5 gap-6 w-full justify-center">
                 {partnersData.map((p, index) => (
                     <Partner key={index} imgSrc={p.imgSrc} alt={p.alt}/>
                 ))}
             </div>
-
         </section>
     );
 }
