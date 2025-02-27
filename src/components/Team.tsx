@@ -1,188 +1,155 @@
-"use client";
+'use client'
 
-import React from "react";
-import {Swiper, SwiperSlide} from "swiper/react";
-import {EffectCoverflow, Navigation, Pagination} from "swiper/modules";
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import {ChevronLeft, ChevronRight} from "lucide-react";
+import { Swiper, SwiperSlide, useSwiperSlide, useSwiper } from 'swiper/react';
+import { EffectCoverflow, Keyboard, Mousewheel, Autoplay } from 'swiper/modules';
 
-import {press_start} from "@/app/fonts";
+import 'swiper/css';
+
+import { press_start } from '@/app/fonts';
+
+import 'swiper/css/effect-coverflow';
+import { useState, useEffect } from 'react';
+
 
 export default function Team() {
-    const teamMembers = [
-        {name: "Олександра Оленчук", role: "Головний організатор", img: "/Sasha.png"},
-        {name: "Володимир Василишин", role: "IT Responsible", img: "/Roman.png"},
-        {name: "Інна Сидорук", role: "Design", img: "/Maria.png"},
-        {name: "Владислав Довбняк", role: "Corporate Relations", img: "/Illia.png"},
-        {name: "Ксенія Олефір", role: "Corporate Relations", img: "/Tetiana.png"},
-        {name: "Артемій Філіп", role: "Logist", img: "/Roman.png"},
-        {name: "Ірина Федорович", role: "Public Relations", img: "/Vika.png"},
-        {name: "Анна Морозова", role: "Human Resources", img: "/Maria.png"},
-        {name: "Христина Соджак", role: "Mentor", img: "/Tetiana.png"},
-        {name: "Ростислав Мінчак", role: "Mentor", img: "/Rostik.png"},
-        {name: "Владислав Братюк", role: "Content Responsible", img: "/Zakhar.png"},
-    ];
+    const team = ['tanya', 'vanya', 'rostik', 'roma', 'yulik', 'illia', 'maria', 'vika', 'sasha', 'bodya', 'zakhar'];
+
+    const [curr, setCurr] = useState(1);
 
     return (
-        <section
-            id="team"
-            className="relative min-h-screen w-full py-10 px-4 flex flex-col items-center justify-start"
-        >
-            <h2
-                className={`${press_start.className} text-white text-3xl md:text-5xl mb-8 text-center`}
-            >
-                Наша команда
-            </h2>
-
-            <div className="relative w-full px-12 mx-auto flex flex-col">
-                <button
-                    className="absolute left-0 top-1/2 -translate-y-1/2 z-10
-                                p-2 bg-transparent"
-                    id="prev-slide"
-                >
-                    <ChevronLeft size={50} className="text-white cursor-pointer"/>
-                </button>
-                <button
-                    className="absolute right-0 top-1/2 -translate-y-1/2 z-10
-                                p-2 bg-transparent"
-                    id="next-slide"
-                >
-                    <ChevronRight size={50} className="text-white cursor-pointer"/>
-                </button>
-
+        <div className="min-h-screen relative w-full py-20" id='team'>
+            <h2 className={`${press_start.className} relative text-hack-green text-xl lg:text-3xl z-10 text-center lg:text-end my-20  mx-5 lg:mr-10`}>Команда організаторів:</h2>
+            <div className='border-2 border-hack-green border-l-0 border-r-0 py-5 z-10'>
                 <Swiper
-                    modules={[EffectCoverflow, Navigation, Pagination]}
-                    effect="coverflow"
-                    navigation={{
-                        nextEl: "#next-slide",
-                        prevEl: "#prev-slide",
+                    className='w-full flex items-center relative z-10 h-64'
+                    autoHeight={true}
+                    slidesPerView={1}
+                    resizeObserver={true}
+                    centerInsufficientSlides={true}
+                    initialSlide={1}
+                    autoplay={true}
+                    mousewheel={false}
+                    keyboard={{
+                        enabled: true,
                     }}
-                    pagination={{
-                        clickable: true,
-                        el: ".team-pagination"
-                    }}
+                    grabCursor={true}
+                    speed={500}
+                    loop={true}
                     centeredSlides={true}
-                    centeredSlidesBounds={true}
-                    breakpoints={{
-                        0: {
-                            slidesPerView: 1,
-                            loop: false,
-                            centerInsufficientSlides: true,
-                            coverflowEffect: {
-                                rotate: 0,
-                                stretch: 0,
-                                depth: 150,
-                                modifier: 1,
-                                slideShadows: false,
-                            },
-                        },
-                        768: {
-                            slidesPerView: 3,
-                            loop: true,
-                            loopAdditionalSlides: 2,
-                            coverflowEffect: {
-                                rotate: 0,
-                                stretch: -70,
-                                depth: 150,
-                                modifier: 1,
-                                slideShadows: false,
-                            },
-                        },
-                        1280: {
-                            slidesPerView: 5,
-                            loop: true,
-                            loopAdditionalSlides: 4,
-                            coverflowEffect: {
-                                rotate: 0,
-                                stretch: -70,
-                                depth: 150,
-                                modifier: 1,
-                                slideShadows: false,
-                            },
-                        },
+                    watchSlidesProgress={true}
+                    modules={[EffectCoverflow, Autoplay, Keyboard, Mousewheel]}
+                    coverflowEffect={{
+                        rotate: 50,
+                        stretch: 0,
+                        depth: 100,
+                        modifier: 1,
+                        slideShadows: false,
                     }}
-                    className="max-w-full w-full custom-coverflow mb-8"
+                    breakpoints={{
+                        550: {
+                            slidesPerView: 2,
+                            spaceBetween: -10
+                        },
+                        780: {
+                            slidesPerView: 2,
+                            spaceBetween: -10
+                        },
+                        890: {
+                            slidesPerView: 3,
+                            spaceBetween: -10
+                        },
+                        1260: {
+                            slidesPerView: 4,
+                            spaceBetween: -5
+                        },
+                        1800: {
+                            slidesPerView: 6,
+                            spaceBetween: -5
+                        }
+                    }}
                 >
-                    {teamMembers.map((member, idx) => (
-                        <SwiperSlide key={idx} className="flex justify-center">
-                            <div
-                                className="item-container bg-white rounded-[84px]
-                                           w-[260px] h-[610px]
-                                           md:w-[350px] md:h-[650px]
-                                           flex flex-col items-center relative
-                                           shadow-lg overflow-hidden transition-transform duration-500"
-                            >
-                                <div className="w-full p-6 flex flex-col items-center z-10">
-                                    <h4
-                                        className={`${press_start.className}
-                                                    text-black text-lg md:text-xl
-                                                    font-bold mb-4 text-center`}
-                                    >
-                                        {member.role}
-                                    </h4>
-                                    <div
-                                        className="bg-[#7FFF4F] text-black font-bold px-6 py-2 rounded-full text-base md:text-lg text-center">
-                                        {member.name}
-                                    </div>
-                                </div>
 
-                                <div className="absolute bottom-0 w-full h-3/4 rounded-t-[120px] overflow-hidden">
-                                    <img
-                                        src={member.img}
-                                        alt={member.name}
-                                        className="w-full h-full object-cover object-center"
-                                    />
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                    ))}
+                    <SwiperSlide className=" ">
+                        <div className='border p-4 py-8 rounded-xl mx-5 flex flex-col justify-between items-center h-[500px] gap-3'>
+                            <img src="Tetiana.png" alt="tania" className='rounded-xl'/>
+                            <h1 className={`${press_start.className} text-xl text-white lg:text-2xl text-center `}>Main Organizer</h1>
+                            <h1 className={`${press_start.className} text-hack-green text-lg lg:text-xl text-center `}>Тетяна Панчук</h1>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide className=" ">
+                        <div className='border p-4 py-8 rounded-xl mx-5 flex flex-col justify-between items-center h-[500px] gap-3'>
+                            <img src="Vanya.png" alt="vanya" className='rounded-xl'/>
+                            <h1 className={`${press_start.className} text-xl text-white lg:text-2xl text-center `}>Human Resourses</h1>
+                            <h1 className={`${press_start.className} text-hack-green text-lg lg:text-xl text-center `}>Іванка Карабан</h1>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide className=" ">
+                        <div className='border p-4 py-8 rounded-xl mx-5 flex flex-col justify-between items-center h-[500px] gap-3'>
+                            <img src="Rostik.png" alt="rostik" className='rounded-xl'/>
+                            <h1 className={`${press_start.className} text-xl text-white lg:text-2xl text-center `}>Logist</h1>
+                            <h1 className={`${press_start.className} text-hack-green text-lg lg:text-xl text-center `}>Ростислав Мінчак</h1>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide className=" ">
+                        <div className='border p-4 py-8 rounded-xl mx-5 flex flex-col justify-between items-center h-[500px] gap-3'>
+                            <img src="Roman.png" alt="roma" className='rounded-xl'/>
+                            <h1 className={`${press_start.className} text-lg text-white lg:text-xl text-center `}>Content Responsible</h1>
+                            <h1 className={`${press_start.className} text-hack-green text-md lg:text-lg text-center `}>Роман Фігель</h1>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide className=" ">
+                        <div className='border p-4 py-8 rounded-xl mx-5 flex flex-col justify-between items-center h-[500px] gap-3'>
+                            <img src="Yulik.png" alt="yulik" className='rounded-xl'/>
+                            <h1 className={`${press_start.className} text-xl text-white lg:text-2xl text-center `}>IT Responsible</h1>
+                            <h1 className={`${press_start.className} text-hack-green text-lg lg:text-xl text-center `}>Юлія Синичак</h1>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide className=" ">
+                        <div className='border p-4 py-8 rounded-xl mx-5 flex flex-col justify-between items-center h-[500px] gap-3'>
+                            <img src="Illia.png" alt="illia" className='rounded-xl'/>
+                            <h1 className={`${press_start.className} text-xl text-white lg:text-2xl text-center `}>FundRaising</h1>
+                            <h1 className={`${press_start.className} text-hack-green text-lg lg:text-xl text-center `}>Ілля Шестак</h1>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide className=" ">
+                        <div className='border p-4 py-8 rounded-xl mx-5 flex flex-col justify-between items-center h-[500px] gap-3'>
+                            <img src="Maria.png" alt="maria" className='rounded-xl'/>
+                            <h1 className={`${press_start.className} text-xl text-white lg:text-2xl text-center `}>FundRaising</h1>
+                            <h1 className={`${press_start.className} text-hack-green text-lg lg:text-xl text-center `}>Марія Зарванська</h1>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide className=" ">
+                        <div className='border p-4 py-8 rounded-xl mx-5 flex flex-col justify-between items-center h-[500px] gap-3'>
+                            <img src="Sasha.png" alt="sasha" className='rounded-xl'/>
+                            <h1 className={`${press_start.className} text-xl text-white lg:text-2xl text-center `}>Public Relations</h1>
+                            <h1 className={`${press_start.className} text-hack-green text-lg lg:text-x text-center `}>Олександра Оленчук</h1>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide className=" ">
+                        <div className='border p-4 py-8 rounded-xl mx-5 flex flex-col justify-between items-center h-[500px] gap-3'>
+                            <img src="Vika.png" alt="vika" className='rounded-xl'/>
+                            <h1 className={`${press_start.className} text-xl text-white lg:text-2xl text-center `}>Design</h1>
+                            <h1 className={`${press_start.className} text-hack-green text-lg lg:text-x text-center `}>Вікторія Бодоряк</h1>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide className=" ">
+                        <div className='border p-4 py-8 rounded-xl mx-5 flex flex-col justify-between items-center h-[500px] gap-3'>
+                            <img src="Zakhar.png" alt="zakhar" className='rounded-xl'/>
+                            <h1 className={`${press_start.className} text-xl text-white lg:text-2xl text-center `}>Mentor</h1>
+                            <h1 className={`${press_start.className} text-hack-green text-lg lg:text-x text-center `}>Захар Підлісецький</h1>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide className=" ">
+                        <div className='border p-4 py-8 rounded-xl mx-5 flex flex-col justify-between items-center h-[500px] gap-3'>
+                            <img src="Bodya.png" alt="bodya" className='rounded-xl'/>
+                            <h1 className={`${press_start.className} text-xl text-white lg:text-2xl text-center `}>Mentor</h1>
+                            <h1 className={`${press_start.className} text-hack-green text-lg lg:text-x text-center `}>Богдан Баран</h1>
+                        </div>
+                    </SwiperSlide>
+
+
                 </Swiper>
-
-                <div className="team-pagination w-full flex justify-center mt-4"></div>
             </div>
-
-            <style>{`
-                @media (min-width: 768px) {
-                    .swiper-slide:not(.swiper-slide-active) .item-container {
-                        filter: brightness(0.5);
-                    }
-                }
-                @media (max-width: 767px) {
-                    .swiper {
-                        display: flex;
-                        justify-content: center;
-                    }
-                    .swiper-slide {
-                        display: flex;
-                        justify-content: center;
-                    }
-                    
-                    .swiper-wrapper {
-                        justify-content: center;
-                    }
-                }
-                
-                .swiper-pagination-bullet {
-                    background-color: white !important;
-                    opacity: 0.5;
-                    width: 10px;
-                    height: 10px;
-                    margin: 0 5px;
-                }
-                
-                .swiper-pagination-bullet-active {
-                    background-color: white !important;
-                    opacity: 1;
-                }
-                
-                .team-pagination {
-                    position: static !important;
-                    margin-top: 20px;
-                }
-            `}</style>
-        </section>
-    );
+        </div >
+    )
 }
