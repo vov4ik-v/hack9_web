@@ -13,8 +13,6 @@ export default function AboutHack() {
         justify-center
         px-6
         py-10
-        bg-black
-        bg-gradient-to-r from-black to-[#1d5d1f]
       "
         >
             <div className="absolute  inset-0 pointer-events-none flex justify-center items-center">

@@ -10,9 +10,6 @@ export default function CategoriesSection() {
         relative
         min-h-screen
         w-full
-        bg-gradient-to-r
-        from-black
-        to-green-900
         px-6
         py-10
       "

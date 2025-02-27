@@ -1,62 +1,121 @@
 "use client";
-import { press_start } from "@/app/fonts";
+import {press_start} from "@/app/fonts";
+import Image from "next/image";
 
-export default function PartnersPlaceholder() {
+// Відсортований підпорядковано зображенню список партнерів
+const partnersData = [
+    {
+        imgSrc: "/partners/Lionwood.svg",
+        alt: "Lionwood",
+    },
+    {
+        imgSrc: "/partners/infineon.svg",
+        alt: "Infineon",
+    },
+    {
+        imgSrc: "/partners/qubstudio.svg",
+        alt: "Qubstudio",
+    },
+    {
+        imgSrc: "/partners/DataArt.svg",
+        alt: "DataArt",
+    },
+    {
+        imgSrc: "/partners/Ukeess.svg",
+        alt: "Ukeess",
+    },
+    {
+        imgSrc: "/partners/keepit.svg",
+        alt: "keepit",
+    },
+    {
+        imgSrc: "/partners/keenethics.svg",
+        alt: "keen.ethics",
+    },
+    {
+        imgSrc: "/partners/Comptools.svg",
+        alt: "Comptools",
+    },
+    {
+        imgSrc: "/partners/clover_dynamics.svg",
+        alt: "Clover Dynamics",
+    },
+    {
+        imgSrc: "/partners/gl.svg",
+        alt: "GlobalLogic",
+    },
+    {
+        imgSrc: "/partners/sombra.svg",
+        alt: "Sombra",
+    },
+    {
+        imgSrc: "/partners/Leobit.svg",
+        alt: "Leobit",
+    },
+    {
+        imgSrc: "/partners/osfdigital.svg",
+        alt: "OSF Digital",
+    },
+    {
+        imgSrc: "/partners/SiTime.svg",
+        alt: "SiTime",
+    },
+    {
+        imgSrc: "/partners/lynksen.svg",
+        alt: "Lynksen",
+    },
+    {
+        imgSrc: "/partners/soft.svg",
+        alt: "SoftServe",
+    },
+    {
+        imgSrc: "/partners/tskt.svg",
+        alt: "tskt",
+    },
+    {
+        imgSrc: "/partners/teamvoy_new.svg",
+        alt: "teamvoy",
+    },
+];
+
+// Одне “лого” з колонки
+const Partner = ({imgSrc, alt}: { imgSrc: string; alt: string }) => {
+    return (
+        <div
+            className={`flex items-center justify-center ${
+                alt === "Leobit" ? "bg-white px-2 rounded-lg" : ""
+            }`}
+        >
+            <Image
+                src={imgSrc}
+                alt={alt}
+                height={128}
+                width={208}
+                className="hover:scale-105 transition-all duration-500 h-16 sm:h-20 md:h-24 lg:h-32"
+            />
+        </div>
+    );
+};
+
+export default function Partners() {
     return (
         <section
-            id="partners"
-            className="
-        relative
-        min-h-screen
-        w-full
-        bg-black
-        flex
-        flex-col
-        px-6
-        py-10
-      "
+            className="min-h-screen py-16  flex flex-col items-center justify-center max-w-7xl w-full px-4 sm:px-16 mx-auto gap-12"
         >
-            <h2
-                className={`
-          ${press_start.className}
-          text-white
-          text-2xl
-          md:text-4xl
-          text-center
-          mb-10
-        `}
-            >
-                Партнери
-            </h2>
+            <div className="relative w-full flex justify-center">
+                <h1
+                    className={`${press_start.className} flex self-center text-white text-center text-2xl lg:text-4xl my-10`}
+                >
+                    Партнери
+                </h1>
 
-            <div
-                className="
-          absolute
-          top-64
-          left-64
-          w-48
-          h-48
-          border-t-[16px]
-          border-l-[16px]
-          border-[#5AFF36]
-          rounded-br-full
-        "
-            />
+            </div>
 
-            <div
-                className="
-          absolute
-          bottom-64
-          right-64
-          w-48
-          h-48
-          border-b-[16px]
-          border-r-[16px]
-          border-[#5AFF36]
-          rounded-tl-full
-          rounded-b-2xl
-        "
-            />
+            <div className="grid grid-cols-4 lg:grid-cols-5 gap-6 w-full justify-center">
+                {partnersData.map((p, index) => (
+                    <Partner key={index} imgSrc={p.imgSrc} alt={p.alt}/>
+                ))}
+            </div>
         </section>
     );
 }
