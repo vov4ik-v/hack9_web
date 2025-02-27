@@ -37,17 +37,17 @@ export default function Team() {
                 Наша команда
             </h2>
 
-            <div className="relative w-full px-12 mx-auto flex flex-col">
+            <div className="relative w-full px-2 md:px-12 mx-auto flex flex-col">
                 <button
                     className="absolute left-0 top-1/2 -translate-y-1/2 z-10
-                                p-2 bg-transparent"
+    p-2 bg-transparent"
                     id="prev-slide"
                 >
                     <ChevronLeft size={50} className="text-white cursor-pointer"/>
                 </button>
                 <button
                     className="absolute right-0 top-1/2 -translate-y-1/2 z-10
-                                p-2 bg-transparent"
+    p-2 bg-transparent"
                     id="next-slide"
                 >
                     <ChevronRight size={50} className="text-white cursor-pointer"/>
@@ -69,12 +69,12 @@ export default function Team() {
                     breakpoints={{
                         0: {
                             slidesPerView: 1,
-                            loop: false,
+                            loop: true,
                             centerInsufficientSlides: true,
                             coverflowEffect: {
                                 rotate: 0,
                                 stretch: 0,
-                                depth: 150,
+                                depth: 0,
                                 modifier: 1,
                                 slideShadows: false,
                             },
@@ -110,10 +110,10 @@ export default function Team() {
                         <SwiperSlide key={idx} className="flex justify-center">
                             <div
                                 className="item-container bg-white rounded-[84px]
-                                           w-[260px] h-[610px]
-                                           md:w-[350px] md:h-[650px]
-                                           flex flex-col items-center relative
-                                           shadow-lg overflow-hidden transition-transform duration-500"
+        w-[260px] h-[650px]
+        md:w-[350px]
+        flex flex-col items-center relative
+        shadow-lg overflow-hidden transition-transform duration-500"
                             >
                                 <div className="w-full p-6 flex flex-col items-center z-10">
                                     <h4
@@ -160,9 +160,7 @@ export default function Team() {
                         justify-content: center;
                     }
                     
-                    .swiper-wrapper {
-                        justify-content: center;
-                    }
+              
                 }
                 
                 .swiper-pagination-bullet {

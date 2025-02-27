@@ -87,6 +87,10 @@ export default function Feedbacks() {
                     slideShadows: false,
                 }}
                 breakpoints={{
+                    0: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
                     640: {
                         slidesPerView: 2,
                         spaceBetween: 20,
