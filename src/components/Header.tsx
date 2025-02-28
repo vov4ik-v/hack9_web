@@ -20,11 +20,11 @@ const navigation: MenuItem[] = [
   },
   {
     name: "Партнери",
-    href: "#offers",
+    href: "#partners",
   },
   {
     name: "Організатори",
-    href: "#contacts",
+    href: "#team",
   },
 ];
 

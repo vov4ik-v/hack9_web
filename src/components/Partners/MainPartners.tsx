@@ -101,6 +101,7 @@ export default function Partners() {
     return (
         <section
             className="min-h-screen py-16  flex flex-col items-center justify-center max-w-7xl w-full px-4 sm:px-16 mx-auto gap-12"
+            id="partners"
         >
             <div className="relative w-full flex justify-center">
                 <h1

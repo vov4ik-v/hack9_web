@@ -6,7 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 export default function AboutBest() {
     return (
         <section
-            id="organizers"
+            id="about_us"
             className="
                 relative
                 min-h-screen

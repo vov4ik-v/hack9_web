@@ -1,8 +1,8 @@
 "use client";
-import { press_start } from "@/app/fonts";
-import { Cross1Icon } from "@radix-ui/react-icons";
-import { AnimatePresence, motion } from "framer-motion";
-import { useEffect } from "react";
+import {press_start} from "@/app/fonts";
+import {Cross1Icon} from "@radix-ui/react-icons";
+import {AnimatePresence, motion} from "framer-motion";
+import {useEffect} from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import useSmoothScrollTo from "@/hooks/useSmothScrollTo";
 
@@ -44,19 +44,19 @@ export default function Drawer({
                 {mobileMenuOpen && (
                     <>
                         <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.2 }}
+                            initial={{opacity: 0}}
+                            animate={{opacity: 1}}
+                            exit={{opacity: 0}}
+                            transition={{duration: 0.2}}
                             className="fixed inset-0 z-50 backdrop-blur-sm"
                             onClick={() => setMobileMenuOpen(false)}
                         />
 
                         <motion.div
-                            initial={{ x: "100%" }}
-                            animate={{ x: "0%" }}
-                            exit={{ x: "100%" }}
-                            transition={{ duration: 0.2 }}
+                            initial={{x: "100%"}}
+                            animate={{x: "0%"}}
+                            exit={{x: "100%"}}
+                            transition={{duration: 0.2}}
                             className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-black px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-200/10"
                         >
                             <div>
@@ -68,7 +68,7 @@ export default function Drawer({
                                         onClick={() => setMobileMenuOpen(false)}
                                     >
                                         <span className="sr-only">Закрити меню</span>
-                                        <Cross1Icon className="h-6 w-6" aria-hidden="true" />
+                                        <Cross1Icon className="h-6 w-6" aria-hidden="true"/>
                                     </button>
                                 </div>
 
@@ -92,7 +92,6 @@ export default function Drawer({
                                     </div>
                                 </div>
 
-                                {/* 🔥 Кнопка "Зареєструватися" */}
                                 <div className="mt-6 flex justify-center">
                                     <button
                                         onClick={() =>
@@ -109,6 +108,23 @@ export default function Drawer({
                                     >
                                         Зареєструватися
                                     </button>
+                                </div>
+
+                                <div className="mt-6 flex justify-center">
+                                    <button
+                                        onClick={() => handleScrollClick("#contacts")}
+                                        className={`
+                      ${press_start.className}
+                      text-black bg-[#5AFF36]
+                      px-6 sm:px-8 py-3 sm:py-4
+                      rounded-3xl
+                      hover:scale-105 transition-transform
+                      text-lg font-bold
+                    `}
+                                    >
+                                        Стати партнером
+                                    </button>
+
                                 </div>
                             </div>
                         </motion.div>

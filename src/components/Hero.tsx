@@ -2,8 +2,11 @@
 
 import { press_start } from "@/app/fonts";
 import { useEffect, useState } from "react";
+import useSmoothScrollTo from "@/hooks/useSmothScrollTo";
 
 export default function Hero() {
+    const handleScrollClick = useSmoothScrollTo();
+
     const [timeLeft, setTimeLeft] = useState({
         months: 0,
         days: 0,
@@ -107,7 +110,7 @@ export default function Hero() {
                         Зареєструватися
                     </button>
                     <button
-                        onClick={() => window.open("#partnership", "_blank")}
+                        onClick={() => handleScrollClick("#contacts")}
                         className={`
               ${press_start.className}
               text-black bg-[#5AFF36]
