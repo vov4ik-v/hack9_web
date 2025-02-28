@@ -77,7 +77,7 @@ export default function AboutBest() {
                             84 осередків
                         </div>
                         <div className="bg-[#5AFF36] text-black px-4 py-2 rounded-full font-semibold text-sm lg:text-base">
-                            36 роки досвіду
+                            36 років досвіду
                         </div>
                     </div>
                 </div>
