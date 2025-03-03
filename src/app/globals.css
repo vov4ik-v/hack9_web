@@ -6,21 +6,50 @@
     --foreground: #ededed;
 }
 
+
 body {
     color: var(--foreground);
     font-family: Arial, Helvetica, sans-serif;
+
     background:
-            radial-gradient(circle at 20% 80%, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 40%, transparent 70%),
-            radial-gradient(circle at 80% 20%, rgba(90,255,54,0.4) 0%, rgba(90,255,54,0.2) 40%, transparent 70%),
-            radial-gradient(ellipse at 40% 60%, rgba(82,192,225,0.5) 0%, rgba(82,192,225,0.2) 40%, transparent 70%),
-            radial-gradient(circle at 30% 30%, rgba(81,253,181,0.3) 0%, rgba(81,253,181,0.1) 50%, transparent 80%),
-            conic-gradient(from 215deg at 50% 50%, #0a2318 0%, #153b2d 25%, #1e4b3c 50%, #14352a 75%, #0a2318 100%);
+        /* Темний шар внизу для насиченості */
+            radial-gradient(
+                    circle at 20% 80%,
+                    rgba(0, 0, 0, 0.7) 0%,
+                    rgba(0, 0, 0, 0.3) 40%,
+                    transparent 70%
+            ),
+                /* Яскраво-зелений акцент справа */
+            radial-gradient(
+                    circle at 80% 20%,
+                    rgba(90, 255, 54, 0.6) 0%,
+                    rgba(90, 255, 54, 0.2) 40%,
+                    transparent 70%
+            ),
+                /* Синій центральний акцент, більш насичений */
+            radial-gradient(
+                    ellipse at 40% 60%,
+                    rgba(82, 192, 225, 0.7) 0%,
+                    rgba(82, 192, 225, 0.3) 40%,
+                    transparent 70%
+            ),
+                /* М'ятний акцент, додатковий шар */
+            radial-gradient(
+                    circle at 30% 30%,
+                    rgba(81, 253, 181, 0.4) 0%,
+                    rgba(81, 253, 181, 0.1) 50%,
+                    transparent 80%
+            ),
+                /* Основний зелений градієнт з темнішими відтінками */
+            conic-gradient(
+                    from 215deg at 50% 50%,
+                    #0a2318 0%,
+                    #153b2d 25%,
+                    #1e4b3c 50%,
+                    #14352a 75%,
+                    #0a2318 100%
+            );
+
     background-attachment: fixed;
     background-size: cover;
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
 }
