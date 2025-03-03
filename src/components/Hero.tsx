@@ -34,7 +34,6 @@ export default function Hero() {
                 return;
             }
 
-            // Приблизно рахуємо "місяці" як 30 днів
             const totalDays = Math.floor(distance / (1000 * 60 * 60 * 24));
             const months = Math.floor(totalDays / 30);
             const days = totalDays % 30;

@@ -7,7 +7,7 @@ export default function Contacts() {
             id="contacts"
             className="
                 relative
-                min-h-[70vh]
+                min-h-screen
                 w-full
                 flex
                 flex-col
@@ -40,21 +40,29 @@ export default function Contacts() {
                         Головна організаторка:
                     </span>
                     <br/>
-                    <span className="text-[#5AFF36]">Олександра Оленчук</span>
+                    <span className="block mt-4 text-[#5AFF36]">Олександра Оленчук</span>
                 </p>
                 <p className="mb-12">
                      <span className={`
                     ${press_start.className} font-bold text-white tracking-wider`}>E-mail:</span>
                     <br/>
-                    <span className="text-[#5AFF36]">
+                    <a
+                        href="mailto:oleksandra.olenchuk@best-eu.org"
+                        className="block mt-4 text-[#5AFF36]"
+                    >
                         oleksandra.olenchuk@best-eu.org
-                    </span>
+                    </a>
                 </p>
                 <p>
                     <span className={`
-                    ${press_start.className} font-bold text-white tracking-wider `}>Тел:</span>
+                    ${press_start.className} font-bold text-white tracking-wider `}>Телефон:</span>
                     <br/>
-                    <span className="text-[#5AFF36]">+380 66 250 30 49</span>
+                    <a
+                        href="tel:+380662503049"
+                        className="block mt-4 text-[#5AFF36]"
+                    >
+                        +380 66 250 30 49
+                    </a>
                 </p>
                 <img
                     src="/contacts/maskot.svg"

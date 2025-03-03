@@ -6,7 +6,6 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import { User } from "lucide-react";
 
-// Імпорт шрифту
 import { press_start } from "@/app/fonts";
 
 export default function Feedbacks() {

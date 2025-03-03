@@ -25,14 +25,12 @@ export default function Drawer({
     const handleScrollClick = useSmoothScrollTo();
 
     useEffect(() => {
-        // Toggle body overflow when the drawer opens or closes
         if (mobileMenuOpen) {
             document.body.style.overflow = "hidden";
         } else {
             document.body.style.overflow = "auto";
         }
 
-        // Cleanup the effect
         return () => {
             document.body.style.overflow = "auto";
         };
@@ -101,6 +99,7 @@ export default function Drawer({
                       ${press_start.className}
                       text-black bg-[#5AFF36]
                       px-6 sm:px-8 py-3 sm:py-4
+                      text-[15px]
                       rounded-3xl
                       hover:scale-105 transition-transform
                       text-lg font-bold
@@ -117,6 +116,7 @@ export default function Drawer({
                       ${press_start.className}
                       text-black bg-[#5AFF36]
                       px-6 sm:px-8 py-3 sm:py-4
+                      text-[15px]
                       rounded-3xl
                       hover:scale-105 transition-transform
                       text-lg font-bold

@@ -1,9 +1,10 @@
 "use client";
-import {useEffect, useState, useRef} from "react";
-import {press_start} from "@/app/fonts";
+
+import { useEffect, useState, useRef } from "react";
+import { press_start } from "@/app/fonts";
 import * as Dialog from "@radix-ui/react-dialog";
-import {HamburgerMenuIcon} from "@radix-ui/react-icons";
-import {motion} from "framer-motion";
+import { HamburgerMenuIcon } from "@radix-ui/react-icons";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Drawer from "./Drawer";
 import useSmoothScrollTo from "@/hooks/useSmothScrollTo";
@@ -14,18 +15,9 @@ type MenuItem = {
 };
 
 const navigation: MenuItem[] = [
-  {
-    name: "Про нас",
-    href: "#about_us",
-  },
-  {
-    name: "Партнери",
-    href: "#partners",
-  },
-  {
-    name: "Організатори",
-    href: "#team",
-  },
+  { name: "Про нас", href: "#about_us" },
+  { name: "Партнери", href: "#partners" },
+  { name: "Організатори", href: "#team" },
 ];
 
 export default function Header() {
@@ -35,7 +27,6 @@ export default function Header() {
 
   const firstSectionRef = useRef<HTMLDivElement | null>(null);
   const secondSectionRef = useRef<HTMLDivElement | null>(null);
-
   const handleScrollClick = useSmoothScrollTo();
 
   useEffect(() => {
@@ -47,20 +38,12 @@ export default function Header() {
         { threshold: 0.5 }
     );
 
-    if (firstSectionRef.current) {
-      observer.observe(firstSectionRef.current);
-    }
-    if (secondSectionRef.current) {
-      observer.observe(secondSectionRef.current);
-    }
+    if (firstSectionRef.current) observer.observe(firstSectionRef.current);
+    if (secondSectionRef.current) observer.observe(secondSectionRef.current);
 
     return () => {
-      if (firstSectionRef.current) {
-        observer.unobserve(firstSectionRef.current);
-      }
-      if (secondSectionRef.current) {
-        observer.unobserve(secondSectionRef.current);
-      }
+      if (firstSectionRef.current) observer.unobserve(firstSectionRef.current);
+      if (secondSectionRef.current) observer.unobserve(secondSectionRef.current);
     };
   }, []);
 
@@ -98,18 +81,10 @@ export default function Header() {
         >
           <div className="container mx-auto px-4 md:px-8 py-[1.5vw] flex justify-between items-center bg-transparent transition-colors duration-300">
             <div
-                onClick={() => {
-                  handleScrollClick("#top");
-                }}
+                onClick={() => handleScrollClick("#top")}
                 className="logo cursor-pointer relative z-20 flex align-middle gap-3 md:top-0 top-[0.8vw]"
             >
-              <Image
-                  src="/HackLogo.svg"
-                  alt="logo"
-                  height={108}
-                  width={108}
-                  className="lg:w-16 w-12"
-              />
+              <Image src="/HackLogo.svg" alt="logo" height={108} width={108} className="lg:w-16 w-12" />
             </div>
 
             <div className="hidden lg:flex gap-8 xl:gap-20 leading-none">
@@ -117,17 +92,14 @@ export default function Header() {
                   <span
                       key={index}
                       onClick={() => handleScrollClick(item.href)}
-                      className={`${press_start.className} cursor-pointer hover:scale-105 transition-all duration-500 text-l`}
+                      className={`${press_start.className} cursor-pointer hover:scale-105 transition-all duration-500 text-l text-white`}
                   >
                 {item.name}
               </span>
               ))}
             </div>
 
-            <Dialog.Root
-                open={mobileMenuOpen}
-                onOpenChange={(open) => setMobileMenuOpen(open)}
-            >
+            <Dialog.Root open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <div className="flex lg:hidden relative">
                 <Dialog.Trigger asChild>
                   <button
@@ -139,11 +111,7 @@ export default function Header() {
                   </button>
                 </Dialog.Trigger>
               </div>
-              <Drawer
-                  setMobileMenuOpen={setMobileMenuOpen}
-                  navigation={navigation}
-                  mobileMenuOpen={mobileMenuOpen}
-              />
+              <Drawer setMobileMenuOpen={setMobileMenuOpen} navigation={navigation} mobileMenuOpen={mobileMenuOpen} />
             </Dialog.Root>
           </div>
         </motion.header>

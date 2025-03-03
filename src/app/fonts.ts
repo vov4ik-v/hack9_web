@@ -1,12 +1,11 @@
 import { Press_Start_2P} from "next/font/google";
 import LocalFont from 'next/font/local'
 
-export const press_start = LocalFont(
-    {
-    preload: true,
-    src: '../fonts/PressStart2P-Regular.ttf'
-    }
-);
+export const press_start = Press_Start_2P({
+    preload: false,
+    weight: "400",
+    subsets: ['cyrillic', 'latin']
+});
 // export const inter = Inter({
 //     preload: true,
 //     weight: "400",

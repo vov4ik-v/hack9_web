@@ -13,7 +13,7 @@ import {press_start} from "@/app/fonts";
 
 export default function Team() {
     const teamMembers = [
-        {name: "Олександра Оленчук", role: "Головний організатор", img: "/Sasha.png"},
+        {name: "Олександра Оленчук", role: "Main Organizer", img: "/Sasha.png"},
         {name: "Володимир Василишин", role: "IT Responsible", img: "/Roman.png"},
         {name: "Інна Сидорук", role: "Design", img: "/Maria.png"},
         {name: "Владислав Довбняк", role: "Corporate Relations", img: "/Illia.png"},
@@ -109,17 +109,33 @@ export default function Team() {
                     {teamMembers.map((member, idx) => (
                         <SwiperSlide key={idx} className="flex justify-center">
                             <div
-                                className="item-container bg-white rounded-[84px]
-        w-[260px] h-[650px]
-        md:w-[350px]
-        flex flex-col items-center relative
-        shadow-lg overflow-hidden transition-transform duration-500"
+                                className="
+    item-container
+    bg-white
+    rounded-[84px]
+    w-[260px] h-[650px]
+    md:w-[350px]
+    flex flex-col
+    items-center
+    relative
+    shadow-lg
+    overflow-hidden
+    transition-transform
+    duration-500
+  "
                             >
                                 <div className="w-full p-6 flex flex-col items-center z-10">
                                     <h4
-                                        className={`${press_start.className}
-                                                    text-black text-lg md:text-xl
-                                                    font-bold mb-4 text-center`}
+                                        className={`
+        ${press_start.className}
+        text-black
+        text-lg
+        md:text-xl
+        font-bold
+        mb-4
+        text-center
+        px-4
+      `}
                                     >
                                         {member.role}
                                     </h4>
@@ -137,6 +153,7 @@ export default function Team() {
                                     />
                                 </div>
                             </div>
+
                         </SwiperSlide>
                     ))}
                 </Swiper>
