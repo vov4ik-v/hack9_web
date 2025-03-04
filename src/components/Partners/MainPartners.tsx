@@ -2,15 +2,10 @@
 import {press_start} from "@/app/fonts";
 import Image from "next/image";
 
-// Відсортований підпорядковано зображенню список партнерів
 const partnersData = [
     {
         imgSrc: "/partners/Lionwood.svg",
         alt: "Lionwood",
-    },
-    {
-        imgSrc: "/partners/infineon.svg",
-        alt: "Infineon",
     },
     {
         imgSrc: "/partners/qubstudio.svg",
@@ -27,6 +22,10 @@ const partnersData = [
     {
         imgSrc: "/partners/keepit.svg",
         alt: "keepit",
+    },
+    {
+        imgSrc: "/partners/infineon.svg",
+        alt: "Infineon",
     },
     {
         imgSrc: "/partners/keenethics.svg",

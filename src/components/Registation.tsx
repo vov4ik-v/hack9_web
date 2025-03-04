@@ -189,7 +189,7 @@ export default function Registration() {
                     leading-relaxed
                 `}
             >
-                Готовий(-a) go виклику?<br/>
+                Приймаєш виклик?<br/>
                 <span className="mt-8 block">Не зволікай!</span>
             </h4>
 
