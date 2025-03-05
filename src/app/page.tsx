@@ -19,12 +19,12 @@ export default function Home() {
             <Hero/>
             {/*<AboutHack/>*/}
             <Theme/>
-            {/*<CategoriesSection/>*/}
+            <CategoriesSection/>
             <Registration/>
             <Feedbacks/>
             <AboutBest/>
             <Team/>
-            {/*<Gallery/>*/}
+            <Gallery/>
             <PartnersSection/>
             <Contacts/>
             <Footer/>

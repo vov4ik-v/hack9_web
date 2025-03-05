@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import {useState} from "react";
+import {Swiper, SwiperSlide} from "swiper/react";
 import {
     EffectCoverflow,
     Keyboard,
@@ -12,38 +12,27 @@ import {
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 
-import { press_start } from "@/app/fonts";
+import {press_start} from "@/app/fonts";
 
 export default function Gallery() {
     const galleryImages = [
-        "/Gallery1.png",
-        "/Gallery2.png",
-        "/Gallery3.png",
-        "/Gallery4.png",
-        "/Gallery5.png",
-        "/Gallery1.png",
-        "/Gallery2.png",
-        "/Gallery3.png",
-        "/Gallery4.png",
-    ];
-
-    const shapes = [
-        "rounded-tl-[80px] rounded-tr-[20px] rounded-bl-[20px] rounded-br-[80px]",
-        "rounded-t-[60px]",
-        "rounded-bl-[60px] rounded-br-[60px]",
-        "rounded-[40px]",
-        "rounded-l-[60px]",
-        "rounded-r-[60px]",
-        "rounded-tl-[60px] rounded-br-[60px]",
-        "rounded-tr-[80px] rounded-bl-[80px]",
-        "rounded-[60px]",
+        "/gallery/gallery1.jpeg",
+        "/gallery/gallery2.jpeg",
+        "/gallery/gallery3.jpeg",
+        "/gallery/gallery4.jpeg",
+        "/gallery/gallery5.jpeg",
+        "/gallery/gallery6.jpeg",
+        "/gallery/gallery7.jpeg",
+        "/gallery/gallery8.jpeg",
+        "/gallery/gallery9.jpeg",
+        "/gallery/gallery10.jpeg",
     ];
 
     return (
         <section
             id="gallery"
             className="
-        min-h-screen
+        min-h-[50vh]
         w-full
         py-20
         relative
@@ -70,9 +59,9 @@ export default function Gallery() {
                     resizeObserver={true}
                     centerInsufficientSlides={true}
                     initialSlide={0}
-                    autoplay={{ delay: 2500 }}
+                    autoplay={false}
                     mousewheel={false}
-                    keyboard={{ enabled: true }}
+                    keyboard={{enabled: true}}
                     grabCursor={true}
                     speed={600}
                     loop={true}
@@ -89,49 +78,231 @@ export default function Gallery() {
                     breakpoints={{
                         550: {
                             slidesPerView: 2,
-                            spaceBetween: 20,
+                            spaceBetween: 10,
                         },
                         780: {
                             slidesPerView: 3,
                             spaceBetween: 20,
                         },
                         1024: {
-                            slidesPerView: 4,
+                            slidesPerView: 3,
                             spaceBetween: 30,
                         },
                         1440: {
-                            slidesPerView: 5,
+                            slidesPerView: 4,
                             spaceBetween: 40,
                         },
                     }}
                 >
-                    {galleryImages.map((src, idx) => (
-                        <SwiperSlide key={idx}>
-                            <div
-                                className={`
+                    <SwiperSlide>
+                        <div
+                            className={`
+      overflow-hidden
+      mx-auto
+      rounded-3xl
+      w-[280px]
+      h-[280px]
+      md:w-[320px]
+      md:h-[320px]
+      lg:w-[320px]
+      lg:h-[380px]
+      xl:w-[380px]
+      xl:h-[420px]
+      grid
+      grid-cols-2
+      gap-2
+    `}
+                        >
+                            <img
+                                src={galleryImages[8]}
+                                alt="gallery-0"
+                                className="w-full h-full object-cover"
+                            />
+                            <img
+                                src={galleryImages[9]}
+                                alt="gallery-1"
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                    </SwiperSlide>
+
+                    <SwiperSlide>
+                        <div
+                            className={`
                   overflow-hidden
                   mx-auto
-                  w-[200px]
-                  h-[200px]
-                  md:w-[240px]
-                  md:h-[240px]
-                  lg:w-[280px]
-                  lg:h-[280px]
+                  rounded-3xl
+                  w-[280px]
+                  h-[280px]
+                  md:w-[320px]
+                  md:h-[320px]
+                  lg:w-[320px]
+                  lg:h-[380px]
+                  xl:w-[380px]
+                  xl:h-[420px]
                   flex
                   items-center
                   justify-center
-                  bg-white/10
-                  ${shapes[idx % shapes.length]} /* Заокруглення з масиву */
+                  
                 `}
-                            >
+                        >
+                            <img
+                                src={galleryImages[0]}
+                                alt={`gallery-${0}`}
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div
+                            className="
+      mx-auto
+      w-[280px]
+      h-[280px]
+      md:w-[320px]
+      md:h-[320px]
+      lg:w-[320px]
+      lg:h-[380px]
+      xl:w-[380px]
+      xl:h-[420px]
+      grid
+      grid-rows-2
+      grid-cols-2
+      gap-3
+      overflow-hidden
+    "
+                        >
+                            {/* Верхнє зображення на 2 колонки */}
+                            <div className="row-span-1 rounded-3xl col-span-2">
                                 <img
-                                    src={src}
-                                    alt={`gallery-${idx}`}
-                                    className="w-full h-full object-cover"
+                                    src={galleryImages[1]}
+                                    alt="gallery-1"
+                                    className="w-full h-full rounded-3xl object-cover"
                                 />
                             </div>
-                        </SwiperSlide>
-                    ))}
+
+                            {/* Ліва картинка внизу */}
+                            <div className="row-span-1 col-span-1">
+                                <img
+                                    src={galleryImages[2]}
+                                    alt="gallery-2"
+                                    className="w-full h-full rounded-3xl object-cover"
+                                />
+                            </div>
+
+                            {/* Права картинка внизу */}
+                            <div className="row-span-1 col-span-1">
+                                <img
+                                    src={galleryImages[3]}
+                                    alt="gallery-3"
+                                    className="w-full h-full rounded-3xl object-cover"
+                                />
+                            </div>
+                        </div>
+                    </SwiperSlide>
+
+                    <SwiperSlide>
+                        <div
+                            className={`
+                  overflow-hidden
+                  mx-auto
+                  w-[280px]
+                  h-[280px]
+                  md:w-[320px]
+                  md:h-[320px]
+                 lg:w-[320px]
+                  lg:h-[380px]
+                  xl:w-[380px]
+                  xl:h-[420px]
+                  flex
+                  items-center
+                  justify-center
+                  rounded-3xl
+                `}
+                        >
+                            <img
+                                src={galleryImages[4]}
+                                alt={`gallery-${2}`}
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div
+                            className="
+      mx-auto
+      w-[280px]
+      h-[280px]
+      md:w-[320px]
+      md:h-[320px]
+      lg:w-[320px]
+      lg:h-[380px]
+      xl:w-[380px]
+      xl:h-[420px]
+      grid
+      grid-rows-2
+      grid-cols-2
+      gap-3
+      overflow-hidden
+    "
+                        >
+
+
+                            {/* Ліва картинка внизу */}
+                            <div className="row-span-1 col-span-1">
+                                <img
+                                    src={galleryImages[5]}
+                                    alt="gallery-2"
+                                    className="w-full h-full rounded-3xl object-cover"
+                                />
+                            </div>
+
+                            {/* Права картинка внизу */}
+                            <div className="row-span-1 col-span-1">
+                                <img
+                                    src={galleryImages[6]}
+                                    alt="gallery-3"
+                                    className="w-full h-full rounded-3xl object-cover"
+                                />
+                            </div>
+
+                            {/* Верхнє зображення на 2 колонки */}
+                            <div className="row-span-1 rounded-3xl col-span-2">
+                                <img
+                                    src={galleryImages[7]}
+                                    alt="gallery-1"
+                                    className="w-full h-full rounded-3xl object-cover"
+                                />
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div
+                            className={`
+                  overflow-hidden
+                  mx-auto
+                  rounded-3xl
+                  w-[280px]
+                  h-[280px]
+                  md:w-[320px]
+                  md:h-[320px]
+                  lg:w-[320px]
+                  lg:h-[380px]
+                  xl:w-[380px]
+                  xl:h-[420px]
+                  flex
+                  items-center
+                  justify-center
+                  
+                `}
+                        >
+                            <img
+                                src={galleryImages[0]}
+                                alt={`gallery-${0}`}
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                    </SwiperSlide>
                 </Swiper>
             </div>
         </section>
