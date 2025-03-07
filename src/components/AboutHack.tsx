@@ -45,14 +45,14 @@ export default function AboutHack() {
             md:p-10
           "
                 >
-                    <p className="text-lg sm:text-xl leading-relaxed pr-20">
+                    <p className="text-lg sm:text-xl leading-relaxed sm:pr-20">
                         <span className="text-[#5AFF36] font-bold">Hackathon</span> — це захід,
                         на який збираються розробники, дизайнери, інженери, щоб за обмежений
                         час в режимі інтенсиву та командної роботи створити та презентувати
                         свій проєкт.
                     </p>
 
-                    <div className="absolute right-[-5rem] bottom-[-5rem] w-[250px] h-[250px]">
+                    <div className="hidden sm:block absolute right-[-5rem] bottom-[-5rem] w-[250px] h-[250px]">
                         <Image
                             src="/about_hack/mascot.svg"
                             alt="Hackathon Mascot"
