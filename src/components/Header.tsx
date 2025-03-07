@@ -77,9 +77,9 @@ export default function Header() {
             initial={{ opacity: 0, y: -80 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="z-50 w-full fixed top-0"
+            className="z-50 w-full fixed top-0 bg-black/50"
         >
-          <div className="container mx-auto px-4 md:px-8 py-[1.5vw] flex justify-between items-center bg-transparent transition-colors duration-300">
+          <div className="container mx-auto px-4 md:px-8 py-[1.5vw] flex justify-between items-center transition-colors duration-300">
             <div
                 onClick={() => handleScrollClick("#top")}
                 className="logo cursor-pointer relative z-20 flex align-middle gap-3 md:top-0 top-[0.8vw]"

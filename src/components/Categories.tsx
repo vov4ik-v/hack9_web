@@ -7,59 +7,83 @@ export default function CategoriesSection() {
         <section
             id="categories"
             className="
-        relative
-        min-h-screen
-        w-full
-        px-6
-        py-10
-      "
+                relative
+                min-h-screen
+                w-full
+                px-6
+                py-10
+            "
         >
             <h2
-                className="
-          text-center
-          text-3xl
-          md:text-5xl
-          text-white
-          font-bold
-          mb-10
-        "
+                className={`${press_start.className}
+                    text-center
+                    text-2xl
+                    lg:text-4xl
+                    text-white
+                    font-bold
+                    my-10
+                `}
             >
                 Категорії
             </h2>
+
             <div
                 className="
-          max-w-6xl
-          mx-auto
-          flex
-          flex-col
-          gap-8
-          md:gap-10
-        "
+                    max-w-6xl
+                    mx-auto
+                    flex
+                    flex-col
+                    gap-8
+                    lg:gap-10
+                "
             >
+                {/* Блок "Soft" */}
                 <div
                     className="
-            flex-1
-            bg-[#F1F1F1]
-            text-black
-            rounded-[40px]
-            p-8
-            flex
-            flex-col
-            md:flex-row
-            items-center
-            gap-8
-          "
+                        flex-1
+                        bg-[#F1F1F1]
+                        text-black
+                        rounded-[40px]
+                        p-8
+                        flex
+                        flex-col
+                        lg:flex-row
+                        items-center
+                        gap-8
+                    "
                 >
-                    <div className="md:w-1/2 p-10">
+                    <div className="lg:w-1/2 p-10 hidden lg:block">
                         <img
                             src="/categories/soft.jpeg"
                             alt="Soft category"
                             className="w-full h-auto rounded-[30px] object-cover"
                         />
                     </div>
-                    <div className="md:w-1/2">
-                        <h3 className={`
-          ${press_start.className} text-3xl font-bold mb-4`}>Soft</h3>
+                    <div className="lg:w-1/2">
+                        <h3
+                            className={`
+    ${press_start.className}
+    text-2xl
+    lg:text-3xl
+    text-center
+    lg:text-start
+    mb-4
+
+    // Стилі до lg
+    bg-[#5AFF36]
+    py-1
+    rounded-2xl
+    font-bold
+
+    // Скасовуємо стилі після lg
+    lg:bg-transparent
+    lg:py-0
+    lg:rounded-none
+    lg:font-normal
+  `}
+                        >
+                            Soft
+                        </h3>
                         <p className="leading-relaxed font-bold text-base mb-6">
                             Учасникам потрібно розробити програму в якій основний фокус на ідеї та задуми,
                             клікабельний візуальний частині програми, а також самій логіці побудови користування
@@ -74,32 +98,53 @@ export default function CategoriesSection() {
                         </p>
                     </div>
                 </div>
+
+                {/* Блок "Hard" */}
                 <div
                     className="
-            flex-1
-            bg-[#F1F1F1]
-            text-black
-            border
-            border-black
-            rounded-[40px]
-            p-8
-            flex
-            flex-col
-            md:flex-row-reverse
-            items-center
-            gap-8
-          "
+                        flex-1
+                        bg-[#F1F1F1]
+                        text-black
+                        rounded-[40px]
+                        p-8
+                        flex
+                        flex-col
+                        lg:flex-row-reverse
+                        items-center
+                        gap-8
+                    "
                 >
-                    <div className="md:w-1/2">
+                    <div className="lg:w-1/2 hidden lg:block">
                         <img
                             src="/categories/hard.jpeg"
                             alt="Hard category"
                             className="w-full h-auto rounded-[30px] object-cover"
                         />
                     </div>
-                    <div className="md:w-1/2 p-10">
+                    <div className="lg:w-1/2">
                         <h3 className={`
-          ${press_start.className} text-3xl font-bold mb-4`}>Hard</h3>
+                            ${press_start.className}
+                              text-2xl
+    lg:text-3xl
+    text-center
+    lg:text-start
+    mb-4
+
+    // Стилі до lg
+    bg-[#5AFF36]
+    py-1
+    rounded-2xl
+    font-bold
+
+    // Скасовуємо стилі після lg
+    lg:bg-transparent
+    lg:py-0
+    lg:rounded-none
+    lg:font-normal
+                        `}
+                        >
+                            Hard
+                        </h3>
                         <p className="leading-relaxed text-base font-bold mb-6">
                             Категорія орієнтована на створення глибинної логіки й алгоритмів,
                             а також реалізацію інтегральних рішень на базі AI, Data Science або ML.

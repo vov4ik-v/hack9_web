@@ -81,9 +81,7 @@ const partnersData = [
 const Partner = ({imgSrc, alt}: { imgSrc: string; alt: string }) => {
     return (
         <div
-            className={`flex items-center justify-center ${
-                alt === "Leobit" ? "bg-white px-2 rounded-lg" : ""
-            }`}
+            className={`flex items-center justify-center`}
         >
             <Image
                 src={imgSrc}
@@ -99,7 +97,7 @@ const Partner = ({imgSrc, alt}: { imgSrc: string; alt: string }) => {
 export default function Partners() {
     return (
         <section
-            className="min-h-screen py-16  flex flex-col items-center justify-center max-w-7xl w-full px-4 sm:px-16 mx-auto gap-12"
+            className="min-h-screen py-16 flex flex-col items-center justify-center max-w-7xl w-full px-4 sm:px-16 mx-auto gap-12"
             id="partners"
         >
             <div className="relative w-full flex justify-center">
@@ -108,13 +106,20 @@ export default function Partners() {
                 >
                     Партнери
                 </h1>
-
             </div>
 
-            <div className="grid grid-cols-4 lg:grid-cols-5 gap-6 w-full justify-center">
-                {partnersData.map((p, index) => (
-                    <Partner key={index} imgSrc={p.imgSrc} alt={p.alt}/>
+            <div className="grid grid-cols-4 gap-6 w-full place-items-center">
+                {partnersData.slice(0, 16).map((p, index) => (
+                    <Partner key={index} imgSrc={p.imgSrc} alt={p.alt} />
                 ))}
+
+                <div className="col-span-1"></div>
+
+                {partnersData.slice(16).map((p, index) => (
+                    <Partner key={index} imgSrc={p.imgSrc} alt={p.alt} />
+                ))}
+
+                <div className="col-span-1"></div>
             </div>
         </section>
     );

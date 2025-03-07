@@ -41,7 +41,6 @@ export default function Gallery() {
             <h2
                 className={`
           ${press_start.className}
-          text-hack-green
           text-4xl
           lg:text-5xl
           text-center
@@ -51,7 +50,7 @@ export default function Gallery() {
                 Галерея
             </h2>
 
-            <div className="relative border-t-2 border-b-2 border-hack-green py-5 px-4">
+            <div className="relative py-5 px-4">
                 <Swiper
                     className="w-full flex items-center relative z-10"
                     autoHeight={true}
@@ -59,7 +58,7 @@ export default function Gallery() {
                     resizeObserver={true}
                     centerInsufficientSlides={true}
                     initialSlide={0}
-                    autoplay={false}
+                    autoplay={{delay: 2000}}
                     mousewheel={false}
                     keyboard={{enabled: true}}
                     grabCursor={true}

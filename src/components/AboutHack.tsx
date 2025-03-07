@@ -1,4 +1,5 @@
-import { press_start } from "@/app/fonts";
+import Image from 'next/image';
+import { press_start } from '@/app/fonts'; // ваш кастомний шрифт
 
 export default function AboutHack() {
     return (
@@ -6,55 +7,60 @@ export default function AboutHack() {
             id="about"
             className="
         relative
-        min-h-screen
+        min-h-[50vh]
         w-full
         flex flex-col
         items-center
         justify-center
         px-6
         py-10
+        text-white
       "
         >
-            <div className="absolute  inset-0 pointer-events-none flex justify-center items-center">
-                <svg
-                    viewBox="0 0 800 400"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-[80%] h-auto"
+            {/* Контейнер з обмеженням ширини */}
+            <div className="max-w-5xl w-full relative">
+                {/* Заголовок */}
+                <h2
+                    className={`
+            ${press_start.className}
+            text-center
+            text-3xl
+            sm:text-5xl
+            tracking-wider
+            mb-12
+          `}
                 >
-                    <path
-                        d="M 50 50 C 200 50, 600 50, 750 200 S 600 350, 100 350"
-                        fill="none"
-                        stroke="#00ff00"
-                        strokeWidth="20"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                    />
-                </svg>
-            </div>
+                    Що таке ХАКАТОН?
+                </h2>
 
-            <h1
-                className={`${press_start.className} text-hack-green text-3xl lg:text-5xl mb-8 z-10 text-center`}
-            >
-                Що таке ХАКАТОН?
-            </h1>
+                {/* Обгортка з «зеленою дужкою» */}
+                <div
+                    className="
+            relative
+            w-full
+            border-[35px]
+            border-[#5AFF36]
+            rounded-[70px]
+            p-6
+            md:p-10
+          "
+                >
+                    <p className="text-lg sm:text-xl leading-relaxed pr-20">
+                        <span className="text-[#5AFF36] font-bold">Hackathon</span> — це захід,
+                        на який збираються розробники, дизайнери, інженери, щоб за обмежений
+                        час в режимі інтенсиву та командної роботи створити та презентувати
+                        свій проєкт.
+                    </p>
 
-            <div
-                className="
-          z-10
-          max-w-2xl
-          bg-black/80
-          text-white
-          rounded-xl
-          p-6
-          text-center
-          border border-hack-green
-        "
-            >
-                <p className="text-lg lg:text-xl">
-                    Hackathon – це захід, на який збираються розробники, дизайнери, інженери,
-                    щоб за обмежений час в режимі інтенсиву та командної роботи, створити
-                    та презентувати свій проєкт.
-                </p>
+                    <div className="absolute right-[-5rem] bottom-[-5rem] w-[250px] h-[250px]">
+                        <Image
+                            src="/about_hack/mascot.svg"
+                            alt="Hackathon Mascot"
+                            fill
+                            style={{ objectFit: 'contain' }}
+                        />
+                    </div>
+                </div>
             </div>
         </section>
     );
