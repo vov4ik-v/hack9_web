@@ -69,13 +69,11 @@ export default function CategoriesSection() {
     lg:text-start
     mb-4
 
-    // Стилі до lg
     bg-[#5AFF36]
     py-1
     rounded-2xl
     font-bold
 
-    // Скасовуємо стилі після lg
     lg:bg-transparent
     lg:py-0
     lg:rounded-none

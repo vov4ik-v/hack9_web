@@ -95,7 +95,6 @@ export default function Gallery() {
                                     alt="gallery-0"
                                     fill
                                     className="object-cover"
-                                    loading="lazy"
                                 />
                             </div>
                             <div className="relative w-full h-full">
@@ -104,7 +103,6 @@ export default function Gallery() {
                                     alt="gallery-1"
                                     fill
                                     className="object-cover"
-                                    loading="lazy"
                                 />
                             </div>
                         </div>
@@ -131,7 +129,6 @@ export default function Gallery() {
                                     alt="gallery-1"
                                     fill
                                     className="object-cover"
-                                    loading="lazy"
                                 />
                             </div>
 
@@ -142,7 +139,6 @@ export default function Gallery() {
                                     alt="gallery-2"
                                     fill
                                     className="object-cover"
-                                    loading="lazy"
                                 />
                             </div>
 
@@ -153,7 +149,6 @@ export default function Gallery() {
                                     alt="gallery-3"
                                     fill
                                     className="object-cover"
-                                    loading="lazy"
                                 />
                             </div>
                         </div>
@@ -180,7 +175,6 @@ export default function Gallery() {
                                     alt="gallery-5"
                                     fill
                                     className="object-cover"
-                                    loading="lazy"
                                 />
                             </div>
 
@@ -191,7 +185,6 @@ export default function Gallery() {
                                     alt="gallery-6"
                                     fill
                                     className="object-cover"
-                                    loading="lazy"
                                 />
                             </div>
 
@@ -202,7 +195,6 @@ export default function Gallery() {
                                     alt="gallery-7"
                                     fill
                                     className="object-cover"
-                                    loading="lazy"
                                 />
                             </div>
                         </div>
