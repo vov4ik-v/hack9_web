@@ -89,7 +89,7 @@ export default function Gallery() {
                 >
                     <SwiperSlide>
                         <div className="overflow-hidden mx-auto rounded-3xl w-[280px] h-[280px] md:w-[320px] md:h-[320px] lg:w-[320px] lg:h-[380px] xl:w-[380px] xl:h-[420px] grid grid-cols-2 gap-2">
-                            <div className="relative w-full h-full">
+                            <div className="relative rounded-3xl w-full h-full">
                                 <Image
                                     src={galleryImages[8]}
                                     alt="gallery-0"
@@ -97,7 +97,7 @@ export default function Gallery() {
                                     className="object-cover"
                                 />
                             </div>
-                            <div className="relative w-full h-full">
+                            <div className="relative rounded-3xl w-full h-full">
                                 <Image
                                     src={galleryImages[9]}
                                     alt="gallery-1"
@@ -114,8 +114,7 @@ export default function Gallery() {
                                 src={galleryImages[0]}
                                 alt="gallery-0"
                                 fill
-                                className="object-cover"
-                                loading="lazy"
+                                className="object-cover rounded-3xl"
                             />
                         </div>
                     </SwiperSlide>
@@ -128,27 +127,27 @@ export default function Gallery() {
                                     src={galleryImages[1]}
                                     alt="gallery-1"
                                     fill
-                                    className="object-cover"
+                                    className="object-cover rounded-3xl"
                                 />
                             </div>
 
                             {/* Ліва картинка внизу */}
-                            <div className="relative row-span-1 col-span-1">
+                            <div className="relative row-span-1 rounded-3xl col-span-1">
                                 <Image
                                     src={galleryImages[2]}
                                     alt="gallery-2"
                                     fill
-                                    className="object-cover"
+                                    className="object-cover rounded-3xl"
                                 />
                             </div>
 
                             {/* Права картинка внизу */}
-                            <div className="relative row-span-1 col-span-1">
+                            <div className="relative row-span-1 rounded-3xl col-span-1">
                                 <Image
                                     src={galleryImages[3]}
                                     alt="gallery-3"
                                     fill
-                                    className="object-cover"
+                                    className="object-cover rounded-3xl"
                                 />
                             </div>
                         </div>
@@ -160,7 +159,7 @@ export default function Gallery() {
                                 src={galleryImages[4]}
                                 alt="gallery-4"
                                 fill
-                                className="object-cover"
+                                className="object-cover rounded-3xl"
                                 loading="lazy"
                             />
                         </div>
@@ -169,32 +168,32 @@ export default function Gallery() {
                     <SwiperSlide>
                         <div className="mx-auto w-[280px] h-[280px] md:w-[320px] md:h-[320px] lg:w-[320px] lg:h-[380px] xl:w-[380px] xl:h-[420px] grid grid-rows-2 grid-cols-2 gap-3 overflow-hidden">
                             {/* Ліва картинка внизу */}
-                            <div className="relative row-span-1 col-span-1">
+                            <div className="relative row-span-1 rounded-3xl col-span-1">
                                 <Image
                                     src={galleryImages[5]}
                                     alt="gallery-5"
                                     fill
-                                    className="object-cover"
+                                    className="object-cover rounded-3xl"
                                 />
                             </div>
 
                             {/* Права картинка внизу */}
-                            <div className="relative row-span-1 col-span-1">
+                            <div className="relative row-span-1 rounded-3xl col-span-1">
                                 <Image
                                     src={galleryImages[6]}
                                     alt="gallery-6"
                                     fill
-                                    className="object-cover"
+                                    className="object-cover rounded-3xl"
                                 />
                             </div>
 
                             {/* Верхнє зображення на 2 колонки */}
-                            <div className="relative row-span-1 rounded-3xl col-span-2">
+                            <div className="relative row-span-1  col-span-2">
                                 <Image
                                     src={galleryImages[7]}
                                     alt="gallery-7"
                                     fill
-                                    className="object-cover"
+                                    className="object-cover rounded-3xl"
                                 />
                             </div>
                         </div>
@@ -206,8 +205,7 @@ export default function Gallery() {
                                 src={galleryImages[10]}
                                 alt="gallery-0"
                                 fill
-                                className="object-cover"
-                                loading="lazy"
+                                className="object-cover rounded-3xl"
                             />
                         </div>
                     </SwiperSlide>
