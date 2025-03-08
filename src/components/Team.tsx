@@ -13,15 +13,15 @@ import {press_start} from "@/app/fonts";
 
 export default function Team() {
     const teamMembers = [
-        {name: "Олександра Оленчук", role: "Main Organizer", img: "/team/sasha.jpg"},
-        {name: "Володимир Василишин", role: "IT Responsible", img: "/team/vov4ik.jpg"},
-        {name: "Інна Сидорук", role: "Design", img: "/team/inna.jpg"},
-        {name: "Владислав Довбняк", role: "Corporate Relations", img: "/team/vlad.jpg"},
-        {name: "Ксенія Олефір", role: "Corporate Relations", img: "/team/ksenia.jpg"},
+        {name: "Олександра Оленчук", role: "Main Organizer", img: "/team/sasha.JPG"},
+        {name: "Володимир Василишин", role: "IT Responsible", img: "/team/vov4ik.JPG"},
+        {name: "Інна Сидорук", role: "Design", img: "/team/inna.JPG"},
+        {name: "Владислав Довбняк", role: "Corporate Relations", img: "/team/vlad.JPG"},
+        {name: "Ксенія Олефір", role: "Corporate Relations", img: "/team/ksenia.JPG"},
         {name: "Артемій Філіп", role: "Logist", img: "/Roman.png"},
-        {name: "Ірина Федорович", role: "Public Relations", img: "/team/ira.jpg"},
-        {name: "Анна Морозова", role: "Human Resources", img: "/team/anya.jpg"},
-        {name: "Христина Соджак", role: "Mentor", img: "/team/khrystyna.jpg"},
+        {name: "Ірина Федорович", role: "Public Relations", img: "/team/ira.JPG"},
+        {name: "Анна Морозова", role: "Human Resources", img: "/team/anya.JPG"},
+        {name: "Христина Соджак", role: "Mentor", img: "/team/khrystyna.JPG"},
         {name: "Ростислав Мінчак", role: "Mentor", img: "/Rostik.png"},
         {name: "Владислав Братюк", role: "Content Responsible", img: "/Zakhar.png"},
     ];
