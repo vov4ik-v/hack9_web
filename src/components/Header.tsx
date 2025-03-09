@@ -79,7 +79,7 @@ export default function Header() {
             transition={{ duration: 0.5 }}
             className="z-50 w-full fixed top-0 bg-black/50"
         >
-          <div className="container mx-auto px-4 md:px-8 py-[1.5vw] flex justify-between items-center transition-colors duration-300">
+          <div className="container mx-auto px-4 md:px-8 flex justify-between items-center transition-colors duration-300">
             <div
                 onClick={() => handleScrollClick("#top")}
                 className="logo cursor-pointer relative z-20 flex align-middle gap-3 md:top-0 top-[0.8vw]"
@@ -107,7 +107,7 @@ export default function Header() {
                       className="relative z-10 inline-flex items-center justify-center rounded-md p-3 text-gray-200"
                       onClick={() => setMobileMenuOpen(true)}
                   >
-                    <HamburgerMenuIcon className="h-10 w-10" aria-hidden="true" />
+                    <HamburgerMenuIcon className="h-8 w-8" aria-hidden="true" />
                   </button>
                 </Dialog.Trigger>
               </div>

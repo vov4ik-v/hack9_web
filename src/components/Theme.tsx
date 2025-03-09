@@ -48,6 +48,9 @@ export default function Theme() {
                         md:text-2xl
                         mb-8
                         text-center
+                        inline-flex
+                        items-center
+                        justify-center
                         font-bold
                         text-black
                     "

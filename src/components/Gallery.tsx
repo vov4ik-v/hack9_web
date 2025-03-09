@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
     EffectCoverflow,
@@ -51,50 +50,48 @@ export default function Gallery() {
                     slidesPerView={1}
                     resizeObserver={true}
                     centerInsufficientSlides={true}
-                    initialSlide={0}
+                    initialSlide={1}
                     autoplay={{ delay: 2000 }}
                     mousewheel={false}
                     keyboard={{ enabled: true }}
                     grabCursor={true}
-                    speed={600}
+                    speed={500}
                     loop={true}
                     centeredSlides={true}
                     watchSlidesProgress={true}
                     modules={[EffectCoverflow, Autoplay, Keyboard, Mousewheel]}
                     coverflowEffect={{
-                        rotate: 0,
+                        rotate: 50,
                         stretch: 0,
                         depth: 100,
                         modifier: 1,
                         slideShadows: false,
                     }}
+                    spaceBetween={20} // відступ залишається сталим
                     breakpoints={{
                         550: {
                             slidesPerView: 2,
-                            spaceBetween: 10,
                         },
-                        780: {
+                        890: {
                             slidesPerView: 3,
-                            spaceBetween: 20,
                         },
-                        1024: {
-                            slidesPerView: 3,
-                            spaceBetween: 30,
-                        },
-                        1440: {
+                        1260: {
                             slidesPerView: 4,
-                            spaceBetween: 40,
+                        },
+                        1800: {
+                            slidesPerView: 6,
                         },
                     }}
                 >
+                    {/* Приклад слайда з комбінацією зображень */}
                     <SwiperSlide>
-                        <div className="overflow-hidden mx-auto rounded-3xl w-[280px] h-[280px] md:w-[320px] md:h-[320px] lg:w-[320px] lg:h-[380px] xl:w-[380px] xl:h-[420px] grid grid-cols-2 gap-2">
+                        <div className="overflow-hidden mx-auto rounded-3xl w-full aspect-square grid grid-cols-2 gap-2">
                             <div className="relative rounded-3xl w-full h-full">
                                 <Image
                                     src={galleryImages[8]}
                                     alt="gallery-0"
                                     fill
-                                    className="object-cover"
+                                    className="object-cover rounded-3xl"
                                 />
                             </div>
                             <div className="relative rounded-3xl w-full h-full">
@@ -102,14 +99,15 @@ export default function Gallery() {
                                     src={galleryImages[9]}
                                     alt="gallery-1"
                                     fill
-                                    className="object-cover"
+                                    className="object-cover rounded-3xl"
                                 />
                             </div>
                         </div>
                     </SwiperSlide>
 
+                    {/* Приклад слайда з одним зображенням */}
                     <SwiperSlide>
-                        <div className="overflow-hidden mx-auto rounded-3xl w-[280px] h-[280px] md:w-[320px] md:h-[320px] lg:w-[320px] lg:h-[380px] xl:w-[380px] xl:h-[420px] flex items-center justify-center relative">
+                        <div className="overflow-hidden mx-auto rounded-3xl w-full aspect-square flex items-center justify-center relative">
                             <Image
                                 src={galleryImages[0]}
                                 alt="gallery-0"
@@ -119,10 +117,11 @@ export default function Gallery() {
                         </div>
                     </SwiperSlide>
 
+                    {/* Інші слайди – за аналогією */}
                     <SwiperSlide>
-                        <div className="mx-auto w-[280px] h-[280px] md:w-[320px] md:h-[320px] lg:w-[320px] lg:h-[380px] xl:w-[380px] xl:h-[420px] grid grid-rows-2 grid-cols-2 gap-3 overflow-hidden">
+                        <div className="mx-auto w-full aspect-square grid grid-rows-2 grid-cols-2 gap-3 overflow-hidden">
                             {/* Верхнє зображення на 2 колонки */}
-                            <div className="relative row-span-1 rounded-3xl col-span-2">
+                            <div className="relative row-span-1 col-span-2 rounded-3xl">
                                 <Image
                                     src={galleryImages[1]}
                                     alt="gallery-1"
@@ -130,9 +129,8 @@ export default function Gallery() {
                                     className="object-cover rounded-3xl"
                                 />
                             </div>
-
                             {/* Ліва картинка внизу */}
-                            <div className="relative row-span-1 rounded-3xl col-span-1">
+                            <div className="relative rounded-3xl col-span-1">
                                 <Image
                                     src={galleryImages[2]}
                                     alt="gallery-2"
@@ -140,9 +138,8 @@ export default function Gallery() {
                                     className="object-cover rounded-3xl"
                                 />
                             </div>
-
                             {/* Права картинка внизу */}
-                            <div className="relative row-span-1 rounded-3xl col-span-1">
+                            <div className="relative rounded-3xl col-span-1">
                                 <Image
                                     src={galleryImages[3]}
                                     alt="gallery-3"
@@ -154,7 +151,7 @@ export default function Gallery() {
                     </SwiperSlide>
 
                     <SwiperSlide>
-                        <div className="overflow-hidden mx-auto rounded-3xl w-[280px] h-[280px] md:w-[320px] md:h-[320px] lg:w-[320px] lg:h-[380px] xl:w-[380px] xl:h-[420px] flex items-center justify-center relative">
+                        <div className="overflow-hidden mx-auto rounded-3xl w-full aspect-square flex items-center justify-center relative">
                             <Image
                                 src={galleryImages[4]}
                                 alt="gallery-4"
@@ -166,9 +163,9 @@ export default function Gallery() {
                     </SwiperSlide>
 
                     <SwiperSlide>
-                        <div className="mx-auto w-[280px] h-[280px] md:w-[320px] md:h-[320px] lg:w-[320px] lg:h-[380px] xl:w-[380px] xl:h-[420px] grid grid-rows-2 grid-cols-2 gap-3 overflow-hidden">
+                        <div className="mx-auto w-full aspect-square grid grid-rows-2 grid-cols-2 gap-3 overflow-hidden">
                             {/* Ліва картинка внизу */}
-                            <div className="relative row-span-1 rounded-3xl col-span-1">
+                            <div className="relative rounded-3xl col-span-1">
                                 <Image
                                     src={galleryImages[5]}
                                     alt="gallery-5"
@@ -176,9 +173,8 @@ export default function Gallery() {
                                     className="object-cover rounded-3xl"
                                 />
                             </div>
-
                             {/* Права картинка внизу */}
-                            <div className="relative row-span-1 rounded-3xl col-span-1">
+                            <div className="relative rounded-3xl col-span-1">
                                 <Image
                                     src={galleryImages[6]}
                                     alt="gallery-6"
@@ -186,9 +182,8 @@ export default function Gallery() {
                                     className="object-cover rounded-3xl"
                                 />
                             </div>
-
                             {/* Верхнє зображення на 2 колонки */}
-                            <div className="relative row-span-1  col-span-2">
+                            <div className="relative col-span-2 rounded-3xl">
                                 <Image
                                     src={galleryImages[7]}
                                     alt="gallery-7"
@@ -200,10 +195,10 @@ export default function Gallery() {
                     </SwiperSlide>
 
                     <SwiperSlide>
-                        <div className="overflow-hidden mx-auto rounded-3xl w-[280px] h-[280px] md:w-[320px] md:h-[320px] lg:w-[320px] lg:h-[380px] xl:w-[380px] xl:h-[420px] flex items-center justify-center relative">
+                        <div className="overflow-hidden mx-auto rounded-3xl w-full aspect-square flex items-center justify-center relative">
                             <Image
                                 src={galleryImages[10]}
-                                alt="gallery-0"
+                                alt="gallery-10"
                                 fill
                                 className="object-cover rounded-3xl"
                             />

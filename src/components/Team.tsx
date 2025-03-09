@@ -22,7 +22,7 @@ export default function Team() {
         {name: "Ірина Федорович", role: "Public Relations", img: "/team/ira.JPG"},
         {name: "Анна Морозова", role: "Human Resources", img: "/team/anya.JPG"},
         {name: "Христина Соджак", role: "Mentor", img: "/team/khrystyna.JPG"},
-        {name: "Ростислав Мінчак", role: "Mentor", img: "/Rostik.png"},
+        {name: "Ростислав Мінчак", role: "Mentor", img: "/team/rostyk.JPG"},
         {name: "Владислав Братюк", role: "Content Responsible", img: "/Zakhar.png"},
     ];
 
