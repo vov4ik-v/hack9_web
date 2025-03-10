@@ -2,7 +2,7 @@ import { Press_Start_2P} from "next/font/google";
 import LocalFont from 'next/font/local'
 
 export const press_start = Press_Start_2P({
-    preload: false,
+    preload: true,
     weight: "400",
     subsets: ['cyrillic', 'latin']
 });
