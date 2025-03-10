@@ -1,6 +1,5 @@
 "use client";
-import Image from "next/image";
-import { press_start } from "@/app/fonts";
+import {press_start} from "@/app/fonts";
 
 export default function CategoriesSection() {
     return (
@@ -37,7 +36,7 @@ export default function CategoriesSection() {
                     className="
             bg-[#F1F1F1]
             text-black
-            rounded-[25px]
+            rounded-[30px]
             p-8
             flex
             flex-col
@@ -77,28 +76,38 @@ export default function CategoriesSection() {
                     <div className="lg:w-1/2 flex flex-col justify-center">
                         <h3
                             className={`
-                ${press_start.className}
-                text-2xl
-                lg:text-3xl
-                text-center
-                lg:text-start
-                mb-4
+    ${press_start.className}
+    text-2xl
+    lg:text-3xl
+    text-center
+    lg:text-start
+    mb-4
+    font-bold
 
-                // Стилі до lg
-                bg-[#5AFF36]
-                py-1
-                rounded-2xl
-                font-bold
+    // Для екранів < lg (мобільних) лишаємо фон і обведення на всьому рядку
+    bg-[#5AFF36]
+    py-1
+    rounded-2xl
 
-                // Скасовуємо стилі після lg
-                lg:bg-transparent
-                lg:py-0
-                lg:rounded-none
-                lg:font-normal
-              `}
+    // Починаючи з lg робимо фон прозорим, знімаємо відступи та заокруглення
+    lg:bg-transparent
+    lg:py-0
+    lg:rounded-none
+  `}
                         >
-                            Soft
+  <span
+      className="
+      // На lg і вище даємо фоновий колір тільки самому слову
+      lg:bg-[#5AFF36]
+      lg:px-3
+      lg:py-2
+      lg:rounded-2xl
+    "
+  >
+    Soft
+  </span>
                         </h3>
+
                         <p className="leading-relaxed font-bold text-base mb-6">
                             Учасникам потрібно розробити програму в якій основний фокус
                             на ідеї та задуми, клікабельній візуальній частині програми,
@@ -120,7 +129,7 @@ export default function CategoriesSection() {
                     className="
             bg-[#F1F1F1]
             text-black
-            rounded-[25px]
+            rounded-[30px]
             p-8
             flex
             flex-col
@@ -157,28 +166,35 @@ export default function CategoriesSection() {
                     <div className="lg:w-1/2 flex flex-col justify-center">
                         <h3
                             className={`
-                ${press_start.className}
-                text-2xl
-                lg:text-3xl
-                text-center
-                lg:text-start
-                mb-4
+    ${press_start.className}
+    text-2xl
+    lg:text-3xl
+    text-center
+    lg:text-start
+    mb-4
+    font-bold
 
-                // Стилі до lg
-                bg-[#5AFF36]
-                py-1
-                rounded-2xl
-                font-bold
+    bg-[#5AFF36]
+    py-1
+    rounded-2xl
 
-                // Скасовуємо стилі після lg
-                lg:bg-transparent
-                lg:py-0
-                lg:rounded-none
-                lg:font-normal
-              `}
+    lg:bg-transparent
+    lg:py-0
+    lg:rounded-none
+  `}
                         >
-                            Hard
+  <span
+      className="
+      lg:bg-[#5AFF36]
+      lg:px-3
+      lg:py-2
+      lg:rounded-2xl
+    "
+  >
+    Hard
+  </span>
                         </h3>
+
                         <p className="leading-relaxed text-base font-bold mb-6">
                             Категорія орієнтована на створення глибинної логіки й алгоритмів,
                             а також реалізацію інтегральних рішень на базі AI, Data Science
