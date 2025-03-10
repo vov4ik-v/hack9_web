@@ -111,7 +111,10 @@ export default function Drawer({
 
                                 <div className="mt-6 flex justify-center">
                                     <button
-                                        onClick={() => handleScrollClick("#contacts")}
+                                        onClick={() => {
+                                            handleScrollClick("#contacts")
+                                            setMobileMenuOpen(false)
+                                        }}
                                         className={`
                       ${press_start.className}
                       text-black bg-[#5AFF36]

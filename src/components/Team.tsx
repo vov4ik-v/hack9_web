@@ -13,9 +13,9 @@ import {press_start} from "@/app/fonts";
 
 export default function Team() {
     const teamMembers = [
-        {name: "Олександра Оленчук", role: "Main Organizer", img: "/team/sasha.JPG"},
-        {name: "Володимир Василишин", role: "IT Responsible", img: "/team/vov4ik.JPG"},
         {name: "Інна Сидорук", role: "Design", img: "/team/inna.JPG"},
+        {name: "Володимир Василишин", role: "IT Responsible", img: "/team/vov4ik.JPG"},
+        {name: "Олександра Оленчук", role: "Main Organizer", img: "/team/sasha.JPG"},
         {name: "Владислав Довбняк", role: "Corporate Relations", img: "/team/vlad.JPG"},
         {name: "Ксенія Олефір", role: "Corporate Relations", img: "/team/ksenia.JPG"},
         {name: "Артемій Філіп", role: "Logist", img: "/Roman.png"},

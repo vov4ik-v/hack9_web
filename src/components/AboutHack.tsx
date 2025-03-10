@@ -38,7 +38,8 @@ export default function AboutHack() {
                     className="
             relative
             w-full
-            border-[35px]
+            border-[25px]
+            sm:border-[35px]
             border-[#5AFF36]
             rounded-[70px]
             p-6
