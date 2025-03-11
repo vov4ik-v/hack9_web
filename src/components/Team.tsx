@@ -18,12 +18,12 @@ export default function Team() {
         {name: "Олександра Оленчук", role: "Main Organizer", img: "/team/sasha.JPG"},
         {name: "Владислав Довбняк", role: "Corporate Relations", img: "/team/vlad.JPG"},
         {name: "Ксенія Олефір", role: "Corporate Relations", img: "/team/ksenia.JPG"},
-        {name: "Артемій Філіп", role: "Logist", img: "/Roman.png"},
+        {name: "Артемій Філіп", role: "Logist", img: "/team/artemii.PNG"},
         {name: "Ірина Федорович", role: "Public Relations", img: "/team/ira.JPG"},
         {name: "Анна Морозова", role: "Human Resources", img: "/team/anya.JPG"},
         {name: "Христина Соджак", role: "Mentor", img: "/team/khrystyna.JPG"},
         {name: "Ростислав Мінчак", role: "Mentor", img: "/team/rostyk.JPG"},
-        {name: "Владислав Братюк", role: "Content Responsible", img: "/Zakhar.png"},
+        {name: "Владислав Братюк", role: "Content Responsible", img: "/team/vladB.PNG"},
     ];
 
     return (

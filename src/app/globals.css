@@ -10,45 +10,13 @@ body {
     color: var(--foreground);
     font-family: Arial, Helvetica, sans-serif;
 
-    background:
-        /* Темний шар внизу для насиченості */
-            radial-gradient(
-                    circle at 20% 80%,
-                    rgba(0, 0, 0, 0.7) 0%,
-                    rgba(0, 0, 0, 0.3) 40%,
-                    transparent 70%
-            ),
-                /* Яскраво-зелений акцент справа (зменшили з 0.6 до 0.3) */
-            radial-gradient(
-                    circle at 80% 20%,
-                    rgba(90, 255, 54, 0.3) 0%,
-                    rgba(90, 255, 54, 0.15) 40%,
-                    transparent 70%
-            ),
-                /* Синій центральний акцент (з 0.7 до 0.4) */
-            radial-gradient(
-                    ellipse at 40% 60%,
-                    rgba(82, 192, 225, 0.4) 0%,
-                    rgba(82, 192, 225, 0.2) 40%,
-                    transparent 70%
-            ),
-                /* М'ятний акцент (з 0.4 до 0.2) */
-            radial-gradient(
-                    circle at 30% 30%,
-                    rgba(81, 253, 181, 0.2) 0%,
-                    rgba(81, 253, 181, 0.05) 50%,
-                    transparent 80%
-            ),
-                /* Основний зелений градієнт */
-            conic-gradient(
-                    from 215deg at 50% 50%,
-                    #0a2318 0%,
-                    #153b2d 25%,
-                    #1e4b3c 50%,
-                    #14352a 75%,
-                    #0a2318 100%
-            );
+    /*!* Замість градієнта використовуємо зображення *!*/
+    /*background-image: url("/path/to/your-image.jpg");*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: center;*/
+    /*background-size: cover;*/
 
-    background-attachment: fixed;
-    background-size: cover;
+    /*!* За бажанням можна залишити, якщо потрібен "паралакс-ефект" *!*/
+    /*background-attachment: fixed;*/
 }
+
