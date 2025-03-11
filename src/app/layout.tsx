@@ -17,6 +17,10 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
+        <head>
+            {/* Підказуємо браузеру завантажити фон якомога раніше */}
+            <link rel="preload" href="/fon.png" as="image"/>
+        </head>
         <body
             className={`${inter.className} bg-center bg-cover bg-fixed`}
             style={{
