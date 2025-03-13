@@ -192,7 +192,9 @@ export default function Registration() {
             </h4>
 
             <button
-                onClick={() => window.open("https://t.me/@HACKath0n_2025_bot", "_blank")}
+                onClick={() =>
+                    window.open("https://t.me/HACKath0n_2025_bot", "_blank")
+                }
                 className={`
                     ${press_start.className}
                     text-black bg-[#5AFF36]
